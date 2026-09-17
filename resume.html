@@ -11,6 +11,7 @@
             --cyan: #0ea5e9;
             --border: #d7e0ea;
             --ink: #1f2933;
+            --muted: #5b6b7b;
         }
 
         * { box-sizing: border-box; }
@@ -18,10 +19,10 @@
         body {
             font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
-            line-height: 1.55;
+            line-height: 1.5;
             background: #eef3fa;
             color: var(--ink);
-            font-size: 0.95rem;
+            font-size: 0.93rem;
         }
 
         .resume {
@@ -35,25 +36,29 @@
 
         header {
             border-bottom: 3px solid var(--blue);
-            padding-bottom: 1rem;
-            margin-bottom: 1.25rem;
+            padding-bottom: 0.9rem;
+            margin-bottom: 1.1rem;
         }
 
         h1 {
             margin: 0;
-            font-size: 1.9rem;
+            font-size: 1.85rem;
             color: var(--navy);
+            letter-spacing: 0.02em;
         }
 
         .title-line {
-            margin: 0.2rem 0 0.4rem;
+            margin: 0.2rem 0 0.45rem;
             color: var(--blue);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.85rem;
         }
 
         .contact-line {
-            font-size: 0.88rem;
-            color: #5b6b7b;
+            font-size: 0.86rem;
+            color: var(--muted);
         }
 
         .contact-line a {
@@ -66,17 +71,17 @@
         }
 
         h2 {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             border-bottom: 1px solid var(--border);
             padding-bottom: 0.25rem;
-            margin: 1.5rem 0 0.75rem;
+            margin: 1.4rem 0 0.7rem;
         }
 
-        h3 {
-            font-size: 0.98rem;
-            margin: 0.9rem 0 0.15rem;
-            color: var(--ink);
+        p {
+            margin: 0.25rem 0;
         }
 
         .item-head {
@@ -85,23 +90,25 @@
             align-items: baseline;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-top: 0.7rem;
         }
 
         .item-head .role { font-weight: 700; }
         .item-head .org { color: var(--blue); font-weight: 600; }
-        .item-head .date { color: #5b6b7b; font-size: 0.85rem; }
+        .item-head .date { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
+        .subline { color: var(--muted); font-size: 0.87rem; }
 
         ul {
-            margin: 0.3rem 0;
-            padding-left: 1.3rem;
+            margin: 0.25rem 0;
+            padding-left: 1.25rem;
         }
 
-        li { margin-bottom: 0.2rem; }
+        li { margin-bottom: 0.18rem; }
 
         .skills-list {
             list-style: none;
             padding: 0;
-            margin: 0.3rem 0 0;
+            margin: 0.35rem 0 0;
             display: flex;
             flex-wrap: wrap;
             gap: 0.4rem;
@@ -111,14 +118,17 @@
             background: #eef3fa;
             border: 1px solid var(--border);
             border-radius: 15px;
-            padding: 0.15rem 0.7rem;
-            font-size: 0.85rem;
+            padding: 0.12rem 0.7rem;
+            font-size: 0.83rem;
         }
 
-        .note {
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
-            color: #5b6b7b;
+        .job-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.7rem;
         }
 
         .print-bar {
@@ -143,8 +153,12 @@
 
         @media print {
             .print-bar { display: none; }
-            body { background: #fff; }
+            body { background: #fff; font-size: 11.5px; }
             .resume { margin: 0; box-shadow: none; padding: 0; max-width: none; }
+        }
+
+        @media (max-width: 600px) {
+            .resume { padding: 1.5rem; margin: 1rem; }
         }
     </style>
 </head>
@@ -158,61 +172,84 @@
 
         <header>
             <h1>Ndifon Nina</h1>
-            <p class="title-line">Computer Engineering Student &middot; Cybersecurity &middot; Software Development</p>
+            <p class="title-line">Computer Engineering Student</p>
             <p class="contact-line">
                 <a href="mailto:ndifon.nina@gmail.com">ndifon.nina@gmail.com</a> &middot;
+                653761228 &middot;
                 <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a> &middot;
                 <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a>
             </p>
         </header>
 
-        <h2>Summary</h2>
-        <p>Aspiring Computer Engineering student focused on cybersecurity and software development. I learn by building &mdash; making tools, breaking them, and fixing them. Currently seeking internship and learning opportunities where I can grow with experienced teams and contribute to practical projects.</p>
+        <h2>Career Summary</h2>
+        <p>
+            Motivated and detail-oriented Level 200 Computer Engineering student with a strong
+            interest in software development, cybersecurity, networking, and embedded systems.
+            Passionate about applying engineering principles to solve real-world problems through
+            technology. Seeking an internship where I can gain practical experience, develop
+            technical skills, and contribute to innovative engineering projects.
+        </p>
 
         <h2>Education</h2>
         <div class="item-head">
-            <span class="role">NAHPI &mdash; Bamenda, Cameroon</span>
+            <span class="role">National Higher Polytechnic Institute (NAHPI), University of Bamenda</span>
             <span class="date">2025 &ndash; Present</span>
         </div>
-        <p>Computer Engineering &mdash; Level 200</p>
+        <p class="subline">Bachelor of Engineering (B.Eng.) in Computer Engineering</p>
 
         <div class="item-head">
-            <span class="role">HTTTC ENSET &mdash; Bambili, Cameroon</span>
+            <span class="role">Higher Technical Teacher Training College (HTTTC-ENSET), University of Bamenda</span>
             <span class="date">2025 &ndash; Present</span>
         </div>
-        <p>Fundamental Computer Science</p>
+        <p class="subline">Bachelor of Science (B.Sc.) in Fundamental Computer Science</p>
 
         <h2>Projects</h2>
+        <div class="item-head">
+            <span class="role">Personal Portfolio Website</span>
+            <span class="date"><a href="https://ndifon-nina.github.io/" class="org">ndifon-nina.github.io</a></span>
+        </div>
+        <ul>
+            <li>Designed and built a responsive personal portfolio website using HTML and CSS</li>
+        </ul>
 
-        <h3>BlindSpot &mdash; Web Security Scanner <span class="note">(Python, Flask)</span></h3>
+        <div class="item-head">
+            <span class="role">BlindSpot &mdash; Web Security Scanner</span>
+            <span class="date">Python &middot; Flask</span>
+        </div>
         <ul>
             <li>Scans websites for missing security headers, exposed <code>.env</code> / <code>.git/config</code>, directory listing, and error leakage</li>
             <li>Explains each finding with a practical fix</li>
         </ul>
 
-        <h3>MoMoSafe237 &mdash; Scam Reporting Platform <span class="note">(Python, Flask, SQLite)</span></h3>
+        <div class="item-head">
+            <span class="role">MoMoSafe237 &mdash; Scam Reporting Platform</span>
+            <span class="date">Python &middot; Flask &middot; SQLite</span>
+        </div>
         <ul>
-            <li>Lets people check a mobile money number or message, report a scammer, and dispute wrong reports</li>
+            <li>Lets users check a mobile money number or message, report a scammer, and dispute wrong reports</li>
             <li>Includes rate limiting, login protections, and an admin review system</li>
         </ul>
 
-        <h3>Blog Statistics Calculator <span class="note">(Python CLI)</span></h3>
+        <div class="item-head">
+            <span class="role">Blog Post Stats Calculator</span>
+            <span class="date"><a href="https://github.com/Ndifon-Nina/week1-foundations" class="org">CLI &middot; Python</a></span>
+        </div>
         <ul>
-            <li>Reads blog posts from JSON and reports total posts, top category, average word count, and oldest post</li>
+            <li>CLI tool that analyzes blog posts from a JSON file and outputs total posts, top category, average word count, and oldest post</li>
         </ul>
 
         <h2>Experience</h2>
-
         <div class="item-head">
-            <span class="role">Technology Intern &mdash; <span class="org">Neltech</span></span>
+            <span class="role">Technology Intern</span>
             <span class="date">2026</span>
         </div>
+        <p class="subline">Neltech</p>
         <ul>
-            <li>Contributed to a team-based web application project; worked on frontend and gained backend/database exposure with PHP</li>
-            <li>Collaborated with teammates to divide responsibilities and coordinate development</li>
+            <li>Contributed to a team-based web application project, working on frontend implementation with exposure to backend/database development using PHP</li>
+            <li>Collaborated with teammates to divide responsibilities and coordinate development tasks</li>
         </ul>
 
-        <div class="item-head">
+        <div class="job-head">
             <span class="role">Cyber Job Simulation &mdash; <span class="org">Deloitte (via Forage)</span></span>
             <span class="date">2026</span>
         </div>
@@ -220,7 +257,7 @@
             <li>Completed practical cybersecurity tasks in a scenario-based simulation</li>
         </ul>
 
-        <div class="item-head">
+        <div class="job-head">
             <span class="role">Cybersecurity Job Simulation &mdash; <span class="org">Forage</span></span>
             <span class="date">2026</span>
         </div>
@@ -236,20 +273,21 @@
             <li>Cybersecurity Job Simulation &mdash; Forage (2026)</li>
         </ul>
 
-        <h2>Technical Skills</h2>
+        <h2>Skills</h2>
         <ul class="skills-list">
-            <li>Python</li>
-            <li>HTML &amp; CSS</li>
+            <li>Python Programming</li>
+            <li>Web Development (HTML, CSS)</li>
             <li>Flask</li>
-            <li>SQL basics</li>
-            <li>Git &amp; GitHub</li>
-            <li>Web security basics</li>
-            <li>Phishing &amp; scam awareness</li>
+            <li>Git / GitHub</li>
+            <li>Database Management</li>
+            <li>SQL Basics</li>
+            <li>Web Security Basics</li>
+            <li>Phishing &amp; Scam Awareness</li>
             <li>Linux (learning)</li>
-            <li>Network security (learning)</li>
-            <li>Nmap</li>
-            <li>Wireshark</li>
-            <li>SOC concepts (learning)</li>
+            <li>Network Security (learning)</li>
+            <li>Problem Solving</li>
+            <li>Teamwork</li>
+            <li>Communication</li>
         </ul>
 
     </div>
