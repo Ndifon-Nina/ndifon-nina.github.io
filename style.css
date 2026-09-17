@@ -17,8 +17,9 @@
     --green: #16a34a;
     --amber: #d97706;
     --border: #e2e8f0;
-    --grad: linear-gradient(135deg, #1e6feb 0%, #0ea5e9 55%, #14b8a6 100%);
-    --shadow: 0 4px 16px rgba(15, 40, 70, 0.08);
+    --grad: linear-gradient(135deg, #1d4ed8 0%, #2563eb 30%, #0ea5e9 65%, #14b8a6 100%);
+    --shadow: 0 6px 20px rgba(15, 40, 70, 0.12);
+    --shadow-lg: 0 10px 30px rgba(15, 40, 70, 0.18);
 }
 
 * {
@@ -33,11 +34,28 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     line-height: 1.7;
-    background:
-        radial-gradient(900px 600px at 12% -8%, rgba(37, 99, 235, 0.07), transparent 60%),
-        radial-gradient(800px 520px at 88% 12%, rgba(14, 165, 233, 0.07), transparent 60%),
-        radial-gradient(1000px 700px at 50% 115%, rgba(20, 184, 166, 0.06), transparent 60%),
-        var(--bg);
+    background-color: #eef3fa;
+    background-image:
+        radial-gradient(rgba(18, 58, 90, 0.10) 1px, transparent 1.5px),
+        radial-gradient(900px 600px at 15% -10%, rgba(37, 99, 235, 0.16), transparent 60%),
+        radial-gradient(700px 520px at 85% 8%, rgba(99, 102, 241, 0.13), transparent 60%),
+        radial-gradient(800px 620px at 4% 60%, rgba(20, 184, 166, 0.12), transparent 55%),
+        radial-gradient(900px 650px at 96% 78%, rgba(14, 165, 233, 0.14), transparent 55%),
+        radial-gradient(1100px 700px at 50% 115%, rgba(37, 99, 235, 0.12), transparent 60%);
+    background-size:
+        26px 26px,
+        auto,
+        auto,
+        auto,
+        auto,
+        auto;
+    background-repeat:
+        repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
     background-attachment: fixed;
     color: var(--ink);
     font-size: 1.0625rem;
@@ -282,6 +300,7 @@ code {
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow);
 }
 
 .about-narrow p {
@@ -355,11 +374,12 @@ code {
     border-radius: 12px;
     border: 1px solid var(--border);
     border-left: 5px solid var(--blue);
+    box-shadow: var(--shadow);
     transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .project:hover {
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
 }
 
@@ -396,6 +416,7 @@ code {
     margin-bottom: 1rem;
     max-width: 58rem;
     margin-inline: auto;
+    box-shadow: var(--shadow);
 }
 
 .exp-item .role {
@@ -447,10 +468,11 @@ code {
     gap: 1rem;
     flex-wrap: wrap;
     transition: box-shadow 0.15s ease;
+    box-shadow: var(--shadow);
 }
 
 .cert-list li:hover {
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
 }
 
 .cert-list .cert-issuer {
