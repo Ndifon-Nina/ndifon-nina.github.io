@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        Ndifon Nina - Portfolio Website
-        URL: https://ndifon-nina.github.io/
-        Last updated: September 2026
-
-        HOW TO UPDATE PROJECT LINKS:
-        When your BlindSpot and MoMoSafe237 repos go live, replace the
-        GitHub profile links below with the actual repo URLs.
-    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ndifon Nina - Computer Engineering student focused on cybersecurity, software and web development. Portfolio of my projects and skills.">
+    <meta name="description" content="Ndifon Nina - Computer Engineering student building toward cybersecurity and software development. Open to remote internships.">
     <title>Ndifon Nina | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main navigation">
             <a class="brand" href="#home">Ndifon Nina</a>
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -34,84 +25,62 @@
 
     <main>
 
-        <!-- HOME -->
+        <!-- HERO -->
         <section id="home" class="hero">
-            <h1>Hello! I'm Ndifon Nina</h1>
-            <p class="subtitle">Computer Engineering student &middot; Cybersecurity focus</p>
-            <p>Welcome to my portfolio. Here you can learn a little about me, the things I build, and the skills I'm working on. I'm open to remote internship opportunities in cybersecurity and software development.</p>
+            <h1>Ndifon Nina</h1>
+            <p class="subtitle">Computer Engineering Student &middot; Cybersecurity &middot; Software Development</p>
+            <p>I build practical tools and I'm working toward security analysis and SOC work. Open to remote internships.</p>
             <div class="hero-actions">
-                <a class="button" href="#projects">View My Projects</a>
-                <a class="button button-outline" href="#contact">Contact Me</a>
+                <a class="button button-light" href="#projects">View Projects</a>
+                <a class="button" href="#contact">Contact Me</a>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section id="about">
             <h2>About Me</h2>
-            <p>
-                I'm a Computer Engineering student, and I'm always working on something.
-                My main interest is cybersecurity, but I also enjoy building software and
-                web applications. Most of my projects come from a simple idea: using
-                technology to solve real problems people face every day.
-            </p>
-            <p>
-                I study at the National Higher Polytechnic Institute (NAHPI) in Bamenda
-                (Computer Engineering, 2025&ndash;2029), and I'm also at the Higher Technical
-                Teacher Training College (ENSET) in Bambili. Right now I'm focused on
-                Python, web development with Flask, and learning more about how to secure
-                systems and spot vulnerabilities. I like building things I can actually
-                use, and learning by doing has worked the best for me. Most of my learning
-                happens on my own &mdash; through online courses, documentation and building
-                projects &mdash; so I'm comfortable working independently and remotely.
-            </p>
-            <a class="button button-outline" href="#projects">View My Projects</a>
-        </section>
+            <p class="section-note">A short introduction.</p>
 
-        <!-- SKILLS -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <p class="section-note">The things I use to build and secure projects.</p>
-            <ul class="skills-list">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>HTML &amp; CSS</li>
-                <li>SQL / MySQL</li>
-                <li>Git &amp; GitHub</li>
-                <li>Cybersecurity fundamentals</li>
-                <li>Web security basics</li>
-                <li>Linux basics</li>
-            </ul>
+            <div class="about-narrow">
+                <p>
+                    I'm a Computer Engineering student (NAHPI and ENSET, Bamenda) focused on
+                    cybersecurity, software and web development. I learn best by building, and I
+                    care about making technology that solves real problems &mdash; like my Cameroon
+                    scam-reporting platform.
+                </p>
+                <p>
+                    My long-term direction is security analysis and SOC work, building toward
+                    security engineering.
+                </p>
+            </div>
         </section>
 
         <!-- PROJECTS -->
         <section id="projects">
-            <h2>My Projects</h2>
-            <p class="section-note">Real projects I've built. Each one solves a problem I noticed.</p>
+            <h2>Projects</h2>
+            <p class="section-note">Things I've built that solve real problems.</p>
 
             <article class="project">
                 <h3>BlindSpot</h3>
                 <p class="project-tags">Python &middot; Flask &middot; Security</p>
                 <p>
-                    A website security scanner. You sign up, submit a URL you own, and it
-                    checks for common problems: missing security headers, exposed files like
-                    <code>.env</code> and <code>.git/config</code>, open directory listing,
-                    and error messages that leak too much information. It gives each site a
-                    score and explains what to fix and why.
+                    A website security scanner. Submit a URL you own and it checks for missing
+                    security headers, exposed files (<code>.env</code>, <code>.git/config</code>),
+                    directory listing, and error leakage &mdash; then explains what to fix.
                 </p>
-                <!-- UPDATE: replace with https://github.com/Ndifon-Nina/blindspot once the repo is public -->
+                <!-- UPDATE: point at the real repo when published -->
                 <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">View Code</a>
             </article>
 
             <article class="project">
-                <h3>MoMoSafe237</h3>
-                <p class="project-tags">Python &middot; Flask &middot; Security &middot; SQLite</p>
+                <h3>MoMoSafe237 &mdash; Scam Reporting Platform</h3>
+                <p class="project-tags">Python &middot; Flask &middot; SQLite &middot; Security</p>
                 <p>
-                    A mobile money scam detection and reporting tool for Cameroon. You can
-                    check a phone number against reported scams, paste a message to see how
-                    suspicious it looks, report a scammer, and even dispute a wrong report.
-                    Built with rate limiting, login protections and an admin review system.
+                    Mobile money scam detection for Cameroon: check a number against reports,
+                    analyze a message, report a scammer, and dispute wrong reports. Includes
+                    rate limiting, login protections and an admin review system.
                 </p>
-                <!-- UPDATE: replace with https://github.com/Ndifon-Nina/momosafe237 once the repo is public -->
+                <!-- UPDATE: point at the real repo when published -->
                 <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">View Code</a>
             </article>
 
@@ -119,56 +88,142 @@
                 <h3>Blog Statistics Calculator</h3>
                 <p class="project-tags">Python &middot; CLI</p>
                 <p>
-                    A command-line tool that reads blog posts from a JSON file and reports
-                    useful statistics: total posts, the most popular category, average word
-                    count, and which post is the oldest.
+                    A command-line tool that reads blog posts from JSON and reports total posts,
+                    top category, average word count, and the oldest post.
                 </p>
                 <a href="https://github.com/Ndifon-Nina/week1-foundations" target="_blank" rel="noopener noreferrer">View Code</a>
             </article>
+        </section>
 
-            <article class="project">
-                <h3>FreeCodeCamp Projects</h3>
-                <p class="project-tags">HTML &amp; CSS</p>
-                <p>
-                    Responsive web design projects I built as part of the FreeCodeCamp
-                    curriculum, including a business card website and a survey form.
-                </p>
-                <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">Certify with FreeCodeCamp</a>
-            </article>
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <p class="section-note">What I can work with, and what I'm learning right now.</p>
+
+            <div class="skills-group">
+                <h3><span class="skill-pill current">Current</span> Working knowledge</h3>
+                <div>
+                    <span class="skill-pill current">Python</span>
+                    <span class="skill-pill current">HTML &amp; CSS</span>
+                    <span class="skill-pill current">Flask</span>
+                    <span class="skill-pill current">SQL basics</span>
+                    <span class="skill-pill current">Git &amp; GitHub</span>
+                    <span class="skill-pill current">Web security basics</span>
+                    <span class="skill-pill current">Phishing &amp; scam awareness</span>
+                    <span class="skill-pill current">Technical troubleshooting</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h3><span class="skill-pill learning">Learning</span> Currently developing</h3>
+                <div>
+                    <span class="skill-pill learning">Linux</span>
+                    <span class="skill-pill learning">Network security</span>
+                    <span class="skill-pill learning">Nmap</span>
+                    <span class="skill-pill learning">Wireshark</span>
+                    <span class="skill-pill learning">SOC concepts</span>
+                    <span class="skill-pill learning">Incident response</span>
+                    <span class="skill-pill learning">OSINT</span>
+                    <span class="skill-pill learning">Python for security</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <p class="section-note">Group project and job simulations.</p>
+
+            <div class="exp-item">
+                <div class="role">
+                    <div>
+                        <strong>Group Technology Project</strong>
+                        <span class="org"> &middot; Neltech Internship</span>
+                    </div>
+                    <span class="date">Internship</span>
+                </div>
+                <ul>
+                    <li>Built a web application with a team &mdash; frontend plus basic backend/database with PHP</li>
+                    <li>Learned project structure, dividing tasks and coordinating with teammates</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="role">
+                    <div>
+                        <strong>Cyber Job Simulation</strong>
+                        <span class="org"> &middot; Deloitte (via Forage)</span>
+                    </div>
+                    <span class="date">2026</span>
+                </div>
+                <ul>
+                    <li>Completed practical cybersecurity tasks in a scenario-based simulation</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="role">
+                    <div>
+                        <strong>Cybersecurity Job Simulation</strong>
+                        <span class="org"> &middot; Forage</span>
+                    </div>
+                    <span class="date">2026</span>
+                </div>
+                <ul>
+                    <li>Designed a phishing email simulation and analyzed the results</li>
+                </ul>
+            </div>
         </section>
 
         <!-- CERTIFICATIONS -->
         <section id="certifications">
             <h2>Certifications</h2>
+            <p class="section-note">Completed training that backs my cybersecurity foundation.</p>
+
             <ul class="cert-list">
                 <li>
-                    <strong>Foundations of Cybersecurity</strong>
-                    <span class="cert-issuer">Google &middot; 2026</span>
+                    <div>
+                        <strong>Foundations of Cybersecurity</strong>
+                        <div class="cert-issuer">Google &middot; 2026</div>
+                    </div>
+                    <a class="cert-verify" href="https://coursera.org/verify/C0NWSMB6LTA8" target="_blank" rel="noopener noreferrer">View certificate &rarr;</a>
                 </li>
                 <li>
-                    <strong>Introduction to Cybersecurity</strong>
-                    <span class="cert-issuer">Cisco Networking Academy &middot; 2026</span>
+                    <div>
+                        <strong>Introduction to Cybersecurity</strong>
+                        <div class="cert-issuer">Cisco Networking Academy &middot; 2026</div>
+                    </div>
+                    <!-- ADD LINK: paste your Cisco credential verify URL here -->
+                    <span class="cert-issuer">Cert ID: a455fb08</span>
                 </li>
                 <li>
-                    <strong>Cyber Job Simulation</strong>
-                    <span class="cert-issuer">Deloitte (via Forage) &middot; 2026</span>
+                    <div>
+                        <strong>Cyber Job Simulation</strong>
+                        <div class="cert-issuer">Deloitte (via Forage) &middot; 2026</div>
+                    </div>
+                    <!-- ADD LINK: paste your Forage profile / credential URL here -->
+                    <span class="cert-issuer">Virtual job simulation</span>
                 </li>
                 <li>
-                    <strong>Cybersecurity Job Simulation (phishing analysis)</strong>
-                    <span class="cert-issuer">Forage &middot; 2026</span>
+                    <div>
+                        <strong>Cybersecurity Job Simulation</strong>
+                        <div class="cert-issuer">Forage &middot; 2026</div>
+                    </div>
+                    <!-- ADD LINK: paste your Forage profile / credential URL here -->
+                    <span class="cert-issuer">Phishing analysis</span>
                 </li>
             </ul>
         </section>
 
         <!-- CONTACT -->
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p class="section-note">I'm open to remote internship opportunities in cybersecurity and software development.</p>
+            <h2>Contact</h2>
+            <p class="section-note">Open to remote internship opportunities in cybersecurity and software development.</p>
             <ul class="contact-list">
-                <li>Email: <a href="mailto:ndifon.nina@gmail.com">ndifon.nina@gmail.com</a></li>
-                <li>GitHub: <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a></li>
-                <li>Location: Douala, Cameroon</li>
+                <li><a href="mailto:ndifon.nina@gmail.com">ndifon.nina@gmail.com</a></li>
+                <li><a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a></li>
+                <li><a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a></li>
+                <li>Douala, Cameroon</li>
             </ul>
             <a class="button" href="mailto:ndifon.nina@gmail.com">Send me an email</a>
         </section>
