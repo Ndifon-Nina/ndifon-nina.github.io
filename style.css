@@ -20,6 +20,28 @@
     --grad: linear-gradient(135deg, #1d4ed8 0%, #2563eb 30%, #0ea5e9 65%, #14b8a6 100%);
     --shadow: 0 6px 20px rgba(15, 40, 70, 0.12);
     --shadow-lg: 0 10px 30px rgba(15, 40, 70, 0.18);
+    --page-bg: #eef3fa;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --ink: #e2e8f0;
+    --muted: #94a3b8;
+    --navy: #93c5fd;
+    --navy-dark: #0b1220;
+    --blue: #60a5fa;
+    --blue-light: #93c5fd;
+    --cyan: #38bdf8;
+    --green: #34d399;
+    --amber: #f59e0b;
+    --border: #334155;
+    --grad: linear-gradient(135deg, #1d4ed8 0%, #2563eb 30%, #0ea5e9 65%, #14b8a6 100%);
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.55);
+    --page-bg: #0b1220;
+    color-scheme: dark;
 }
 
 * {
@@ -34,7 +56,7 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     line-height: 1.7;
-    background-color: #eef3fa;
+    background-color: var(--page-bg);
     background-image:
         radial-gradient(rgba(18, 58, 90, 0.10) 1px, transparent 1.5px),
         radial-gradient(900px 600px at 15% -10%, rgba(37, 99, 235, 0.16), transparent 60%),
@@ -59,6 +81,17 @@ body {
     background-attachment: fixed;
     color: var(--ink);
     font-size: 1.0625rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root[data-theme="dark"] body {
+    background-image:
+        radial-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1.5px),
+        radial-gradient(900px 600px at 15% -10%, rgba(37, 99, 235, 0.22), transparent 60%),
+        radial-gradient(700px 520px at 85% 8%, rgba(99, 102, 241, 0.18), transparent 60%),
+        radial-gradient(800px 620px at 4% 60%, rgba(20, 184, 166, 0.16), transparent 55%),
+        radial-gradient(900px 650px at 96% 78%, rgba(14, 165, 233, 0.18), transparent 55%),
+        radial-gradient(1100px 700px at 50% 115%, rgba(37, 99, 235, 0.18), transparent 60%);
 }
 
 /* ---------- Header & Navigation ---------- */
@@ -122,6 +155,30 @@ header {
 }
 
 .navbar a:focus-visible {
+    outline: 2px solid #7cc4ff;
+    outline-offset: 2px;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}
+
+.theme-toggle:focus-visible {
     outline: 2px solid #7cc4ff;
     outline-offset: 2px;
 }
@@ -549,6 +606,243 @@ code {
     text-decoration: underline;
 }
 
+/* ---------- Dark theme overrides ---------- */
+
+:root[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 40%, #0ea5e9 100%);
+}
+
+:root[data-theme="dark"] code {
+    background: #0f172a;
+    border-color: #334155;
+    color: #93c5fd;
+}
+
+:root[data-theme="dark"] .skill-pill.current {
+    border-color: #14532d;
+    background: #052e16;
+    color: #86efac;
+}
+
+:root[data-theme="dark"] .skill-pill.learning {
+    border-color: #7c2d12;
+    background: #431407;
+    color: #fdba74;
+}
+
+:root[data-theme="dark"] .badge {
+    background: #7c2d12;
+    color: #fed7aa;
+    border-color: #9a3412;
+}
+
+:root[data-theme="dark"] .cert-list .cert-issuer,
+:root[data-theme="dark"] .exp-item .role .date,
+:root[data-theme="dark"] .section-note,
+:root[data-theme="dark"] .sub-heading {
+    color: var(--muted);
+}
+
+:root[data-theme="dark"] .exp-item .role .org,
+:root[data-theme="dark"] .project-tags {
+    color: #93c5fd;
+}
+
+:root[data-theme="dark"] .project a,
+:root[data-theme="dark"] .cert-list .cert-verify,
+:root[data-theme="dark"] .contact-list a {
+    color: #60a5fa;
+}
+
+:root[data-theme="dark"] .project a:hover,
+:root[data-theme="dark"] .project a:focus-visible,
+:root[data-theme="dark"] .cert-list .cert-verify:hover,
+:root[data-theme="dark"] .cert-list .cert-verify:focus-visible,
+:root[data-theme="dark"] .contact-list a:hover,
+:root[data-theme="dark"] .contact-list a:focus-visible {
+    color: #93c5fd;
+    border-bottom-color: #93c5fd;
+}
+
+:root[data-theme="dark"] .button-light {
+    background: #f8fafc;
+    color: #0b2b45;
+}
+
+:root[data-theme="dark"] .button-light:hover,
+:root[data-theme="dark"] .button-light:focus-visible {
+    background: #e2e8f0;
+}
+
+/* ---------- Currently building ---------- */
+
+.building-strip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin: 1.5rem 0 0;
+    padding: 1.75rem;
+}
+
+.building-strip h2 {
+    font-size: 1.35rem;
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.building-strip h2::after {
+    width: 2.75rem;
+    margin: 0.45rem auto 0;
+}
+
+.building-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.building-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--amber);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.building-card:hover,
+.building-card:focus-visible {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.building-card strong {
+    color: var(--navy);
+}
+
+.building-card span {
+    font-size: 0.92rem;
+    color: var(--muted);
+}
+
+/* ---------- Project write-ups ---------- */
+
+.project-details {
+    margin-top: 1rem;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.85rem;
+}
+
+.project-details summary {
+    cursor: pointer;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+    user-select: none;
+}
+
+.project-details summary:hover,
+.project-details summary:focus-visible {
+    color: var(--navy);
+}
+
+.details-body {
+    margin-top: 0.75rem;
+}
+
+.details-body p {
+    margin: 0 0 0.6rem;
+}
+
+/* ---------- Learning journey ---------- */
+
+.journey {
+    max-width: 42rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.journey::before {
+    content: "";
+    position: absolute;
+    left: 3.4rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: var(--border);
+}
+
+.journey-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.journey-year {
+    flex-shrink: 0;
+    width: 2.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 0.35rem 0.25rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: var(--shadow);
+}
+
+.journey-item > div {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    flex: 1;
+    box-shadow: var(--shadow);
+}
+
+.journey-item strong {
+    display: block;
+    color: var(--navy);
+}
+
+.journey-item p {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+/* ---------- Dark theme overrides ---------- */
+
+:root[data-theme="dark"] .building-card {
+    background: #0f172a;
+}
+
+:root[data-theme="dark"] .building-card strong {
+    color: #93c5fd;
+}
+
+:root[data-theme="dark"] .building-card span {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .journey::before {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .journey-item strong {
+    color: #93c5fd;
+}
+
 /* ---------- Contact ---------- */
 
 .contact-list {
@@ -581,6 +875,11 @@ code {
 
 #contact {
     text-align: center;
+}
+
+.contact-actions {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* ---------- Footer ---------- */
@@ -620,6 +919,18 @@ footer p {
 
     .hero {
         padding: 3.5rem 1.25rem;
+    }
+
+    .building-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey::before {
+        left: 1.1rem;
+    }
+
+    .journey-year {
+        width: 2rem;
     }
 }
 

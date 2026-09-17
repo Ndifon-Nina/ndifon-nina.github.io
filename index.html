@@ -6,6 +6,15 @@
     <meta name="description" content="Ndifon Nina - Computer Engineering student focused on cybersecurity, software development, and computer systems. Practical projects, active learning, open to internships.">
     <title>Ndifon Nina | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            var saved = localStorage.getItem("theme");
+            var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (saved === "dark" || (!saved && prefersDark)) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
 </head>
 <body>
 
@@ -19,9 +28,11 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#learning">Currently Learning</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#learning">Learning</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">Dark</button>
         </nav>
     </header>
 
@@ -35,6 +46,21 @@
             <div class="hero-actions">
                 <a class="button button-light" href="#projects">View Projects</a>
                 <a class="button" href="#contact">Contact Me</a>
+            </div>
+        </section>
+
+        <!-- CURRENTLY BUILDING -->
+        <section id="building" class="building-strip" aria-label="Currently building">
+            <h2>Currently Building</h2>
+            <div class="building-grid">
+                <a href="#momosafe" class="building-card">
+                    <strong>MoMoSafe237</strong>
+                    <span>A security-focused platform for reporting and identifying scams in Cameroon.</span>
+                </a>
+                <a href="#blindspot" class="building-card">
+                    <strong>BlindSpot</strong>
+                    <span>A web security scanner for identifying common website security issues.</span>
+                </a>
             </div>
         </section>
 
@@ -155,7 +181,7 @@
             <h2>Projects</h2>
             <p class="section-note">A few things I've built that solve real problems.</p>
 
-            <article class="project">
+            <article id="blindspot" class="project">
                 <h3>BlindSpot</h3>
                 <p class="project-tags">Python &middot; Flask &middot; Security</p>
                 <p>
@@ -165,9 +191,23 @@
                 </p>
                 <!-- UPDATE: point at the real repo when published -->
                 <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">View Code</a>
+
+                <details class="project-details">
+                    <summary>Read the full write-up</summary>
+                    <div class="details-body">
+                        <p><strong>The Problem:</strong> I kept noticing websites &mdash; even my own &mdash; going up with obvious security gaps. When I researched more, I found developers often overlook the basics.</p>
+                        <p><strong>My Approach:</strong> Build a tool I'd want to use myself: paste a URL you own, get a clear list of what's missing and how to fix it.</p>
+                        <p><strong>Features:</strong> missing security headers, exposed <code>.env</code> / <code>.git/config</code>, directory listing, and error leakage checks, with fix explanations for each finding.</p>
+                        <p><strong>Security Considerations:</strong> scans only what the user submits, focuses on common misconfigurations, and reports actionable fixes rather than trying to exploit anything.</p>
+                        <p><strong>Technologies:</strong> Python, Flask, HTTP request analysis.</p>
+                        <p><strong>Challenges:</strong> deciding which checks matter most and explaining each finding simply instead of dumping raw responses.</p>
+                        <p><strong>What I Learned:</strong> how many default configurations are insecure, and how small fixes (a single missing header) can change a site's risk level.</p>
+                        <p><strong>Status:</strong> working locally; being packaged for public use.</p>
+                    </div>
+                </details>
             </article>
 
-            <article class="project">
+            <article id="momosafe" class="project">
                 <h3>MoMoSafe237 &mdash; Scam Reporting Platform</h3>
                 <p class="project-tags">Python &middot; Flask &middot; SQLite &middot; Security</p>
                 <p>
@@ -177,6 +217,20 @@
                 </p>
                 <!-- UPDATE: point at the real repo when published -->
                 <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">View Code</a>
+
+                <details class="project-details">
+                    <summary>Read the full write-up</summary>
+                    <div class="details-body">
+                        <p><strong>The Problem:</strong> When I got into cybersecurity, I realized mobile money scams have become rampant in Cameroon &mdash; mostly because people aren't aware, and there's no common place to check a suspicious number or message.</p>
+                        <p><strong>My Approach:</strong> Build a central platform where anyone can check a number or message, report a scammer, and see what others have reported.</p>
+                        <p><strong>Features:</strong> number lookup, message analysis, scam reporting, wrong-report disputes, and an admin review system to keep reports credible.</p>
+                        <p><strong>Security Considerations:</strong> rate limiting on lookups and reports, login protections, an admin approval flow, and protections against abuse of the dispute process.</p>
+                        <p><strong>Technologies:</strong> Python, Flask, SQLite, HTML/CSS.</p>
+                        <p><strong>Challenges:</strong> making it trustworthy &mdash; anyone can report, so the admin review and dispute system had to stop false reports while staying fair.</p>
+                        <p><strong>What I Learned:</strong> that a security tool's value depends on how well it handles human misuse, not just technical threats.</p>
+                        <p><strong>Status:</strong> working locally; being prepared for wider use.</p>
+                    </div>
+                </details>
             </article>
 
             <article class="project">
@@ -187,6 +241,19 @@
                     top category, average word count, and the oldest post.
                 </p>
                 <a href="https://github.com/Ndifon-Nina/week1-foundations" target="_blank" rel="noopener noreferrer">View Code</a>
+
+                <details class="project-details">
+                    <summary>Read the full write-up</summary>
+                    <div class="details-body">
+                        <p><strong>The Problem:</strong> I wanted a quick way to calculate blog statistics without doing the math manually.</p>
+                        <p><strong>My Approach:</strong> A simple CLI that reads JSON data and prints the numbers I care about.</p>
+                        <p><strong>Features:</strong> total posts, most-used category, average word count, and the oldest post.</p>
+                        <p><strong>Technologies:</strong> Python, JSON, command-line basics.</p>
+                        <p><strong>Challenges:</strong> keeping it small and focused &mdash; it's a practice tool more than a full product.</p>
+                        <p><strong>What I Learned:</strong> reading and processing structured data, and turning a repetitive task into a tiny tool.</p>
+                        <p><strong>Status:</strong> still learning to build.</p>
+                    </div>
+                </details>
             </article>
         </section>
 
@@ -281,6 +348,31 @@
             </ul>
         </section>
 
+        <!-- SECURITY FOCUS -->
+        <section id="security">
+            <h2>Security Focus</h2>
+            <p class="section-note">What I'm exploring.</p>
+
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <strong>Security Analysis</strong>
+                    <p>Learning how to identify suspicious activity and investigate potential security issues.</p>
+                </div>
+                <div class="strength-card">
+                    <strong>Web Security</strong>
+                    <p>Building and testing applications with security considerations such as authentication, input validation, rate limiting, and secure configuration.</p>
+                </div>
+                <div class="strength-card">
+                    <strong>Network Security</strong>
+                    <p>Developing my understanding of networks, protocols, monitoring, and common network threats.</p>
+                </div>
+                <div class="strength-card">
+                    <strong>Security Automation</strong>
+                    <p>Exploring how Python can be used to automate repetitive security tasks.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- CURRENTLY LEARNING -->
         <section id="learning">
             <h2>Currently Learning</h2>
@@ -331,6 +423,61 @@
                 </ul>
             </div>
 
+            <h3 class="sub-heading">Hands-on Practice</h3>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <strong>TryHackMe</strong>
+                    <p>Cybersecurity labs and practical security exercises.</p>
+                </div>
+                <div class="strength-card">
+                    <strong>Forage</strong>
+                    <p>Virtual cybersecurity job simulations.</p>
+                </div>
+                <div class="strength-card">
+                    <strong>Personal Projects</strong>
+                    <p>Building security-focused applications and experimenting with defensive security concepts.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Learning Journey</h3>
+            <div class="journey">
+                <div class="journey-item">
+                    <span class="journey-year">2025</span>
+                    <div>
+                        <strong>Started higher education</strong>
+                        <p>Computer Engineering / Computer Science</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <span class="journey-year">2026</span>
+                    <div>
+                        <strong>Programming &amp; Web Development</strong>
+                        <p>Python &middot; HTML &middot; CSS &middot; SQL</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <span class="journey-year">2026</span>
+                    <div>
+                        <strong>Cybersecurity</strong>
+                        <p>Google &middot; Cisco &middot; Forage &middot; TryHackMe</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <span class="journey-year">2026</span>
+                    <div>
+                        <strong>Building</strong>
+                        <p>BlindSpot &middot; MoMoSafe237</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <span class="journey-year">Next</span>
+                    <div>
+                        <strong>Deeper Security Practice</strong>
+                        <p>Networking &middot; SOC &middot; Linux &middot; Web Security</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="learning-note">
                 <p>
                     <strong>In progress:</strong> Google Cybersecurity Professional Certificate &middot;
@@ -348,7 +495,10 @@
                 <li><a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a></li>
                 <li><a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a></li>
             </ul>
-            <a class="button" href="mailto:ndifon.nina@gmail.com">Send me an email</a>
+            <div class="hero-actions contact-actions">
+                <a class="button" href="resume.html" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                <a class="button button-light" href="mailto:ndifon.nina@gmail.com">Send me an email</a>
+            </div>
         </section>
 
     </main>
@@ -356,6 +506,24 @@
     <footer>
         <p>&copy; 2026 Ndifon Nina | All Rights Reserved.</p>
     </footer>
+
+    <script>
+        (function () {
+            var btn = document.getElementById("theme-toggle");
+            function apply() {
+                var dark = document.documentElement.getAttribute("data-theme") === "dark";
+                btn.textContent = dark ? "Light" : "Dark";
+                btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+            }
+            btn.addEventListener("click", function () {
+                var dark = document.documentElement.getAttribute("data-theme") === "dark";
+                document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+                localStorage.setItem("theme", dark ? "light" : "dark");
+                apply();
+            });
+            apply();
+        })();
+    </script>
 
 </body>
 </html>

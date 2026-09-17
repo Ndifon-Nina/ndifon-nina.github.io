@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndifon Nina - Resume</title>
+    <style>
+        :root {
+            --navy: #123a5a;
+            --blue: #2563eb;
+            --cyan: #0ea5e9;
+            --border: #d7e0ea;
+            --ink: #1f2933;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            line-height: 1.55;
+            background: #eef3fa;
+            color: var(--ink);
+            font-size: 0.95rem;
+        }
+
+        .resume {
+            max-width: 50rem;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(15, 40, 70, 0.12);
+            padding: 2.5rem;
+        }
+
+        header {
+            border-bottom: 3px solid var(--blue);
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.9rem;
+            color: var(--navy);
+        }
+
+        .title-line {
+            margin: 0.2rem 0 0.4rem;
+            color: var(--blue);
+            font-weight: 600;
+        }
+
+        .contact-line {
+            font-size: 0.88rem;
+            color: #5b6b7b;
+        }
+
+        .contact-line a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 1.05rem;
+            color: var(--navy);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.25rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        h3 {
+            font-size: 0.98rem;
+            margin: 0.9rem 0 0.15rem;
+            color: var(--ink);
+        }
+
+        .item-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .item-head .role { font-weight: 700; }
+        .item-head .org { color: var(--blue); font-weight: 600; }
+        .item-head .date { color: #5b6b7b; font-size: 0.85rem; }
+
+        ul {
+            margin: 0.3rem 0;
+            padding-left: 1.3rem;
+        }
+
+        li { margin-bottom: 0.2rem; }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.3rem 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skills-list li {
+            background: #eef3fa;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 0.15rem 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        .note {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #5b6b7b;
+        }
+
+        .print-bar {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .print-bar button {
+            background: var(--blue);
+            border: none;
+            color: #fff;
+            font: inherit;
+            font-weight: 600;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .print-bar button:hover {
+            background: #1d4ed8;
+        }
+
+        @media print {
+            .print-bar { display: none; }
+            body { background: #fff; }
+            .resume { margin: 0; box-shadow: none; padding: 0; max-width: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-bar">
+        <button onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="resume">
+
+        <header>
+            <h1>Ndifon Nina</h1>
+            <p class="title-line">Computer Engineering Student &middot; Cybersecurity &middot; Software Development</p>
+            <p class="contact-line">
+                <a href="mailto:ndifon.nina@gmail.com">ndifon.nina@gmail.com</a> &middot;
+                <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a> &middot;
+                <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a>
+            </p>
+        </header>
+
+        <h2>Summary</h2>
+        <p>Aspiring Computer Engineering student focused on cybersecurity and software development. I learn by building &mdash; making tools, breaking them, and fixing them. Currently seeking internship and learning opportunities where I can grow with experienced teams and contribute to practical projects.</p>
+
+        <h2>Education</h2>
+        <div class="item-head">
+            <span class="role">NAHPI &mdash; Bamenda, Cameroon</span>
+            <span class="date">2025 &ndash; Present</span>
+        </div>
+        <p>Computer Engineering &mdash; Level 200</p>
+
+        <div class="item-head">
+            <span class="role">HTTTC ENSET &mdash; Bambili, Cameroon</span>
+            <span class="date">2025 &ndash; Present</span>
+        </div>
+        <p>Fundamental Computer Science</p>
+
+        <h2>Projects</h2>
+
+        <h3>BlindSpot &mdash; Web Security Scanner <span class="note">(Python, Flask)</span></h3>
+        <ul>
+            <li>Scans websites for missing security headers, exposed <code>.env</code> / <code>.git/config</code>, directory listing, and error leakage</li>
+            <li>Explains each finding with a practical fix</li>
+        </ul>
+
+        <h3>MoMoSafe237 &mdash; Scam Reporting Platform <span class="note">(Python, Flask, SQLite)</span></h3>
+        <ul>
+            <li>Lets people check a mobile money number or message, report a scammer, and dispute wrong reports</li>
+            <li>Includes rate limiting, login protections, and an admin review system</li>
+        </ul>
+
+        <h3>Blog Statistics Calculator <span class="note">(Python CLI)</span></h3>
+        <ul>
+            <li>Reads blog posts from JSON and reports total posts, top category, average word count, and oldest post</li>
+        </ul>
+
+        <h2>Experience</h2>
+
+        <div class="item-head">
+            <span class="role">Technology Intern &mdash; <span class="org">Neltech</span></span>
+            <span class="date">2026</span>
+        </div>
+        <ul>
+            <li>Contributed to a team-based web application project; worked on frontend and gained backend/database exposure with PHP</li>
+            <li>Collaborated with teammates to divide responsibilities and coordinate development</li>
+        </ul>
+
+        <div class="item-head">
+            <span class="role">Cyber Job Simulation &mdash; <span class="org">Deloitte (via Forage)</span></span>
+            <span class="date">2026</span>
+        </div>
+        <ul>
+            <li>Completed practical cybersecurity tasks in a scenario-based simulation</li>
+        </ul>
+
+        <div class="item-head">
+            <span class="role">Cybersecurity Job Simulation &mdash; <span class="org">Forage</span></span>
+            <span class="date">2026</span>
+        </div>
+        <ul>
+            <li>Designed a phishing email simulation and analyzed the results</li>
+        </ul>
+
+        <h2>Certifications</h2>
+        <ul>
+            <li>Foundations of Cybersecurity &mdash; Google (2026)</li>
+            <li>Introduction to Cybersecurity &mdash; Cisco Networking Academy (2026)</li>
+            <li>Cyber Job Simulation &mdash; Deloitte via Forage (2026)</li>
+            <li>Cybersecurity Job Simulation &mdash; Forage (2026)</li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>HTML &amp; CSS</li>
+            <li>Flask</li>
+            <li>SQL basics</li>
+            <li>Git &amp; GitHub</li>
+            <li>Web security basics</li>
+            <li>Phishing &amp; scam awareness</li>
+            <li>Linux (learning)</li>
+            <li>Network security (learning)</li>
+            <li>Nmap</li>
+            <li>Wireshark</li>
+            <li>SOC concepts (learning)</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
