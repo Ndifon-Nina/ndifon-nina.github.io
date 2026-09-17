@@ -316,10 +316,71 @@ code {
     margin-bottom: 0.75rem;
 }
 
-.soft-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+.sub-heading {
+    text-align: center;
+    margin: 2.5rem 0 1.25rem;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    max-width: 58rem;
+    margin: 0 auto;
+}
+
+.strength-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--cyan);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+.strength-card strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+}
+
+.strength-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.18rem 0.6rem;
+    border-radius: 20px;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd9a8;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.learning-note {
+    max-width: 42rem;
+    margin: 1.5rem auto 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--amber);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.learning-note p {
+    margin: 0;
 }
 
 /* ---------- Skills ---------- */
@@ -357,12 +418,6 @@ code {
     border-color: #fcd9a8;
     background: #fffbeb;
     color: #78350f;
-}
-
-.skill-pill.soft {
-    border-color: #c7d6fb;
-    background: #eef2ff;
-    color: #3730a3;
 }
 
 /* ---------- Projects ---------- */
