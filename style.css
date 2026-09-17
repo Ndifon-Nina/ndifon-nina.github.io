@@ -33,7 +33,12 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     line-height: 1.7;
-    background-color: var(--bg);
+    background:
+        radial-gradient(900px 600px at 12% -8%, rgba(37, 99, 235, 0.07), transparent 60%),
+        radial-gradient(800px 520px at 88% 12%, rgba(14, 165, 233, 0.07), transparent 60%),
+        radial-gradient(1000px 700px at 50% 115%, rgba(20, 184, 166, 0.06), transparent 60%),
+        var(--bg);
+    background-attachment: fixed;
     color: var(--ink);
     font-size: 1.0625rem;
 }
@@ -283,8 +288,19 @@ code {
     margin-bottom: 0.75rem;
 }
 
-.about-narrow p:last-child {
+.about-narrow p:last-of-type {
     margin-bottom: 0;
+}
+
+.soft-skills-title {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 /* ---------- Skills ---------- */
@@ -322,6 +338,12 @@ code {
     border-color: #fcd9a8;
     background: #fffbeb;
     color: #78350f;
+}
+
+.skill-pill.soft {
+    border-color: #c7d6fb;
+    background: #eef2ff;
+    color: #3730a3;
 }
 
 /* ---------- Projects ---------- */
@@ -448,35 +470,6 @@ code {
 .cert-list .cert-verify:focus-visible {
     color: var(--navy);
     text-decoration: underline;
-}
-
-/* ---------- Learning / In Progress ---------- */
-
-.learning-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 42rem;
-}
-
-.learning-list li {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--amber);
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.learning-list .learn-title {
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-
-.learning-list .learn-note {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin: 0;
 }
 
 /* ---------- Contact ---------- */
