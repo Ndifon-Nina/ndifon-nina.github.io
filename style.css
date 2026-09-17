@@ -1,252 +1,350 @@
-<<<<<<< HEAD
-*{
+/* ============================================
+   Ndifon Nina - Portfolio Stylesheet
+   Light theme: kept from the original design,
+   cleaned up with better spacing + focus states.
+   ============================================ */
+
+* {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-body{
-    font-family: Arial, sans-serif;
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: #f4f4f4;
     color: #333;
-
+    font-size: 1.0625rem;
 }
-header{
-    background: #333;
+
+/* ---------- Header & Navigation ---------- */
+
+header {
+    background: #1f2933;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 0 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
-nav a{
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    font-weight: bold;
-}
-nav a:hover{
-    color: #00aaff;
-}
-section{
-    padding: 40px;
-    max-width: 900;
-    margin: auto;
 
-}
-h2{
-    text-align: center;
-}
-.hero{
-    text-align: center;
-    background: white;
-
-}
-.button{
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background: #222;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.button:hover{
-    background: #00aaff
-
-}
-ul{
-    display:flex;
+.navbar {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    padding: 0;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
 }
-li{
-    list-style: none;
-    background: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-}
-.project{ 
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
 
-
-}
-.project a{
+.navbar .brand {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #fff;
     text-decoration: none;
-    color: #0077cc;
 }
-#contact{
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-}
-#contact a{
-    color: #0077cc;
-}
-footer{
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-}
-@media(max-width: 600px){
-    nav ul{
-        flex-direction: column;
-        display: block;
-        margin: 15px;
-    }
 
-    .section{
-        padding: 20px;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    input, textarea{
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    button{
-        padding: 12px;
-        background: #222;
-        color: white;
-        border: none;
-        border: none;
-        cursor: pointer;
-    }
-    button:hover{
-        background: #00aaff;
-    }
-=======
-*{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-body{
-    font-family: Arial, sans-serif;
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
     margin: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0;
+    list-style: none;
+}
 
-}
-header{
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-nav a{
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    font-weight: bold;
-}
-nav a:hover{
-    color: #00aaff;
-}
-section{
-    padding: 40px;
-    max-width: 900;
-    margin: auto;
-
-}
-h2{
-    text-align: center;
-}
-.hero{
-    text-align: center;
-    background: white;
-
-}
-.button{
+.navbar a {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background: #222;
-    color: white;
+    color: #d7e1ea;
     text-decoration: none;
-    border-radius: 5px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.15s ease, background 0.15s ease;
 }
-.button:hover{
-    background: #00aaff
 
+.navbar a:hover,
+.navbar a:focus-visible {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
 }
-ul{
-    display:flex;
+
+.navbar a:focus-visible {
+    outline: 2px solid #7cc4ff;
+    outline-offset: 2px;
+}
+
+/* ---------- Layout ---------- */
+
+main {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+section {
+    padding: 3.5rem 0;
+}
+
+section + section {
+    border-top: 1px solid #e1e1e1;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin: 0 0 0.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.35rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+code {
+    background: #ececec;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.9em;
+}
+
+.section-note {
+    text-align: center;
+    color: #666;
+    margin: 0 0 2rem;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    text-align: center;
+    background: #fff;
+    padding: 5rem 1.25rem;
+    margin: 1.25rem 0 0;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+}
+
+.hero .subtitle {
+    font-size: 1.4rem;
+    color: #0077cc;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    background: #1f2933;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    border: 2px solid #1f2933;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    background: #00aaff;
+    border-color: #00aaff;
+    color: #fff;
+}
+
+.button:focus-visible {
+    outline: 2px solid #1f2933;
+    outline-offset: 2px;
+}
+
+.button-outline {
+    background: transparent;
+    color: #1f2933;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+    background: #00aaff;
+    border-color: #00aaff;
+    color: #fff;
+}
+
+/* ---------- Skills ---------- */
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     justify-content: center;
     padding: 0;
-}
-li{
+    margin: 0;
     list-style: none;
-    background: white;
-    padding: 10px 20px;
-    border-radius: 8px;
 }
-.project{ 
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
 
-
+.skills-list li {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    padding: 0.6rem 1.3rem;
+    border-radius: 25px;
+    font-weight: 500;
 }
-.project a{
+
+/* ---------- Projects ---------- */
+
+.project {
+    background: #fff;
+    padding: 1.5rem 1.75rem;
+    margin: 0 0 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.project:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.project-tags {
+    font-size: 0.85rem;
+    color: #0077cc;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.project a {
+    color: #0077cc;
+    font-weight: 600;
     text-decoration: none;
-    color: #0077cc;
+    border-bottom: 1px solid transparent;
 }
-#contact{
-    background: white;
-    padding: 20px;
+
+.project a:hover,
+.project a:focus-visible {
+    color: #005f9e;
+    border-bottom-color: #005f9e;
+    outline: none;
+}
+
+/* ---------- Certifications ---------- */
+
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 36rem;
+    margin-inline: auto;
+}
+
+.cert-list li {
+    background: #fff;
+    border: 1px solid #e1e1e1;
     border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
-#contact a{
-    color: #0077cc;
+
+.cert-list .cert-issuer {
+    color: #666;
+    font-size: 0.9rem;
 }
-footer{
+
+/* ---------- Contact ---------- */
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    max-width: 36rem;
+    margin-inline: auto;
     text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
 }
-@media(max-width: 600px){
-    nav ul{
-        flex-direction: column;
-        display: block;
-        margin: 15px;
+
+.contact-list li {
+    margin-bottom: 0.6rem;
+}
+
+.contact-list a {
+    color: #0077cc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+    color: #005f9e;
+    border-bottom-color: #005f9e;
+    outline: none;
+}
+
+#contact {
+    text-align: center;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1.25rem;
+    background: #1f2933;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+    section {
+        padding: 2.5rem 0;
     }
 
-    .section{
-        padding: 20px;
-    }
-    form{
-        display: flex;
+    .navbar {
+        justify-content: center;
         flex-direction: column;
-        gap: 10px;
+        padding: 0.75rem 0;
     }
-    input, textarea{
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+
+    .navbar ul {
+        justify-content: center;
     }
-    button{
-        padding: 12px;
-        background: #222;
-        color: white;
-        border: none;
-        border: none;
-        cursor: pointer;
+
+    h1 {
+        font-size: 2rem;
     }
-    button:hover{
-        background: #00aaff;
-    }
->>>>>>> 471b368 (Updated website design)
 }

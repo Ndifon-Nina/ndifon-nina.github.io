@@ -1,259 +1,183 @@
-<<<<<<< HEAD
-<html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+        Ndifon Nina - Portfolio Website
+        URL: https://ndifon-nina.github.io/
+        Last updated: September 2026
+
+        HOW TO UPDATE PROJECT LINKS:
+        When your BlindSpot and MoMoSafe237 repos go live, replace the
+        GitHub profile links below with the actual repo URLs.
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ndifon Nina's Portfolio Website">
-    <title>Ndifon Nina | Portfolio Website</title>
+    <meta name="description" content="Ndifon Nina - Computer Engineering student focused on cybersecurity, software and web development. Portfolio of my projects and skills.">
+    <title>Ndifon Nina | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-       
-        <nav>
+        <nav class="navbar">
+            <a class="brand" href="#home">Ndifon Nina</a>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section id="home" class="hero">
-        <h1>Hello! I'm Ndifon Nina</h1>
-        <h2>Computer engineering student.</h2>
-        <p>Welcome to my portfolio website. Here u can learn a little about me and my work.
-        </p>
-    </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am currently studying Computer Engineering and continously improving my programming and web development skills.
-            I am passionate about technology, software and web development and cybersecurity.
-            I enjoy learning new technologies and building projects that solve real-world problems.
-             I am always looking for new opportunities to grow and learn in the field of computer engineering.
 
-        </p>
-        <a class="button" href="#projects">View My Projects</a>    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>Here are some of the skills I have:</p>
-        <ul>
-            <li>Programming Languages: Python, C++</li>
-            <li>Web Development: HTML, CSS</li>
-            <li>Database Management: MySQL</li>
-            <li>Version Control: Git, GitHub</li>
-            <li>Microsoft Office</li>
-            <li>Cybersecurity</li>
-    </section>
-    
-        <section id="projects">
+    <main>
 
-    <h2>My Projects</h2>
+        <!-- HOME -->
+        <section id="home" class="hero">
+            <h1>Hello! I'm Ndifon Nina</h1>
+            <p class="subtitle">Computer Engineering student &middot; Cybersecurity focus</p>
+            <p>Welcome to my portfolio. Here you can learn a little about me, the things I build, and the skills I'm working on. I'm open to remote internship opportunities in cybersecurity and software development.</p>
+            <div class="hero-actions">
+                <a class="button" href="#projects">View My Projects</a>
+                <a class="button button-outline" href="#contact">Contact Me</a>
+            </div>
+        </section>
 
-    <article class="project">
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm a Computer Engineering student, and I'm always working on something.
+                My main interest is cybersecurity, but I also enjoy building software and
+                web applications. Most of my projects come from a simple idea: using
+                technology to solve real problems people face every day.
+            </p>
+            <p>
+                I study at the National Higher Polytechnic Institute (NAHPI) in Bamenda
+                (Computer Engineering, 2025&ndash;2029), and I'm also at the Higher Technical
+                Teacher Training College (ENSET) in Bambili. Right now I'm focused on
+                Python, web development with Flask, and learning more about how to secure
+                systems and spot vulnerabilities. I like building things I can actually
+                use, and learning by doing has worked the best for me. Most of my learning
+                happens on my own &mdash; through online courses, documentation and building
+                projects &mdash; so I'm comfortable working independently and remotely.
+            </p>
+            <a class="button button-outline" href="#projects">View My Projects</a>
+        </section>
 
-        <h3>Business Card Website</h3>
-
-        <p>
-            A responsive business card website built as part of the
-            FreeCodeCamp Responsive Web Design curriculum using HTML and CSS.
-        </p>
-
-        
-
-    </article>
-
-    <article class="project">
-
-        <h3>Survey Form</h3>
-
-        <p>
-            A responsive survey form created with HTML and CSS as part of
-            the FreeCodeCamp Responsive Web Design curriculum.
-        </p>
-
-       
-
-    </article>
-
-    <article class="project">
-
-        <h3>Number Pattern Generator</h3>
-
-        <p>
-            A Python program that generates different number patterns based
-            on user input.
-        </p>
-
-       
-
-    </article>
-
-    <article class="project">
-
-        <h3>Blog Statistics Calculator</h3>
-
-        <p>
-            A Python command-line application that calculates and displays
-            blog statistics.
-        </p>
-
-        <a href="https://github.com/Ndifon-Nina/week1-foundations" target="_blank">
-            View Code
-        </a>
-
-    </article>
-    <article class="project">
-
-        <h3>Portfolio Website</h3>
-
-        <p>
-            A personal portfolio website built using HTML and CSS to showcase
-            my projects and skills.
-        </p>
-
-        <a href="https://github.com/" target="_blank">
-            View Code
-        </a>
-
-</section>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: ndifon.nina@gmail.com</p>
-        <p>
-            GitHub: <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-        </p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
-
-
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required>
-            </textarea>
-            <button type="submit">Send</button>
-        </form>
-        <footer>
-            <p> 2026 Ndifon Nina | All Rights Reserved.</p>
-        </footer>
-</body>
-=======
-<html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ndifon Nina's Portfolio Website">
-    <title>Ndifon Nina | Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-       
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <p class="section-note">The things I use to build and secure projects.</p>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>Flask</li>
+                <li>HTML &amp; CSS</li>
+                <li>SQL / MySQL</li>
+                <li>Git &amp; GitHub</li>
+                <li>Cybersecurity fundamentals</li>
+                <li>Web security basics</li>
+                <li>Linux basics</li>
             </ul>
-        </nav>
-    </header>
-    <section id="home" class="hero">
-        <h1>Hello! I'm Ndifon Nina</h1>
-        <h2>Computer engineering student.</h2>
-        <p>Welcome to my portfolio website. Here u can learn a little about me and my work.
-        </p>
-    </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am currently studying Computer Engineering and continously improving my programming and web development skills.
-            I am passionate about technology, software and web development and cybersecurity.
-            I enjoy learning new technologies and building projects that solve real-world problems.
-             I am always looking for new opportunities to grow and learn in the field of computer engineering.
+        </section>
 
-        </p>
-        <a class="button" href="#projects">View My Projects</a>    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>Here are some of the skills I have:</p>
-        <ul>
-            <li>Programming Languages: Python, C++</li>
-            <li>Web Development: HTML, CSS</li>
-            <li>Database Management: MySQL</li>
-           
-            <li>Microsoft Office</li>
-            
-    </section>
-    
+        <!-- PROJECTS -->
         <section id="projects">
+            <h2>My Projects</h2>
+            <p class="section-note">Real projects I've built. Each one solves a problem I noticed.</p>
 
-    <h2>My Projects</h2>
+            <article class="project">
+                <h3>BlindSpot</h3>
+                <p class="project-tags">Python &middot; Flask &middot; Security</p>
+                <p>
+                    A website security scanner. You sign up, submit a URL you own, and it
+                    checks for common problems: missing security headers, exposed files like
+                    <code>.env</code> and <code>.git/config</code>, open directory listing,
+                    and error messages that leak too much information. It gives each site a
+                    score and explains what to fix and why.
+                </p>
+                <!-- UPDATE: replace with https://github.com/Ndifon-Nina/blindspot once the repo is public -->
+                <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">View Code</a>
+            </article>
 
-    </article>
+            <article class="project">
+                <h3>MoMoSafe237</h3>
+                <p class="project-tags">Python &middot; Flask &middot; Security &middot; SQLite</p>
+                <p>
+                    A mobile money scam detection and reporting tool for Cameroon. You can
+                    check a phone number against reported scams, paste a message to see how
+                    suspicious it looks, report a scammer, and even dispute a wrong report.
+                    Built with rate limiting, login protections and an admin review system.
+                </p>
+                <!-- UPDATE: replace with https://github.com/Ndifon-Nina/momosafe237 once the repo is public -->
+                <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">View Code</a>
+            </article>
 
-    <article class="project">
+            <article class="project">
+                <h3>Blog Statistics Calculator</h3>
+                <p class="project-tags">Python &middot; CLI</p>
+                <p>
+                    A command-line tool that reads blog posts from a JSON file and reports
+                    useful statistics: total posts, the most popular category, average word
+                    count, and which post is the oldest.
+                </p>
+                <a href="https://github.com/Ndifon-Nina/week1-foundations" target="_blank" rel="noopener noreferrer">View Code</a>
+            </article>
 
-        <h3>Blog Statistics Calculator</h3>
+            <article class="project">
+                <h3>FreeCodeCamp Projects</h3>
+                <p class="project-tags">HTML &amp; CSS</p>
+                <p>
+                    Responsive web design projects I built as part of the FreeCodeCamp
+                    curriculum, including a business card website and a survey form.
+                </p>
+                <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">Certify with FreeCodeCamp</a>
+            </article>
+        </section>
 
-        <p>
-            A Python command-line application that calculates and displays
-            blog statistics.
-        </p>
+        <!-- CERTIFICATIONS -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul class="cert-list">
+                <li>
+                    <strong>Foundations of Cybersecurity</strong>
+                    <span class="cert-issuer">Google &middot; 2026</span>
+                </li>
+                <li>
+                    <strong>Introduction to Cybersecurity</strong>
+                    <span class="cert-issuer">Cisco Networking Academy &middot; 2026</span>
+                </li>
+                <li>
+                    <strong>Cyber Job Simulation</strong>
+                    <span class="cert-issuer">Deloitte (via Forage) &middot; 2026</span>
+                </li>
+                <li>
+                    <strong>Cybersecurity Job Simulation (phishing analysis)</strong>
+                    <span class="cert-issuer">Forage &middot; 2026</span>
+                </li>
+            </ul>
+        </section>
 
-        <a href="https://github.com/Ndifon-Nina/week1-foundations" target="_blank">
-            View Code
-        </a>
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p class="section-note">I'm open to remote internship opportunities in cybersecurity and software development.</p>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:ndifon.nina@gmail.com">ndifon.nina@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a></li>
+                <li>Location: Douala, Cameroon</li>
+            </ul>
+            <a class="button" href="mailto:ndifon.nina@gmail.com">Send me an email</a>
+        </section>
 
-    </article>
-    <article class="project">
+    </main>
 
-        <h3>Portfolio Website</h3>
+    <footer>
+        <p>&copy; 2026 Ndifon Nina | All Rights Reserved.</p>
+    </footer>
 
-        <p>
-            A personal portfolio website built using HTML and CSS to showcase
-            my projects and skills.
-        </p>
-
-        <a href="https://github.com/Ndifon-Nina/ndifonnina.github.io" target="_blank">
-            View Code
-        </a>
-
-</section>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: ndifon.nina@gmail.com</p>
-        <p>
-            GitHub: <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-        </p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
-
-
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required>
-            </textarea>
-            <button type="submit">Send</button>
-        </form>
-        <footer>
-            <p> 2026 Ndifon Nina | All Rights Reserved.</p>
-        </footer>
 </body>
->>>>>>> 471b368 (Updated website design)
 </html>
