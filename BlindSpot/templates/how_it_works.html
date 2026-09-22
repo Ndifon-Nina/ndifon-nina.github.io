@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}How It Works — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="page-hero">
+    <div class="container narrow">
+      <h1>How BlindSpot Works</h1>
+      <p class="lead">A beginner-friendly web security scanner for sites you own or are authorized to test.</p>
+    </div>
+  </div>
+
+  <section class="section container narrow content-block">
+    <h2>What it checks</h2>
+    <ol>
+      <li><strong>HTTPS</strong> — Is your connection encrypted?</li>
+      <li><strong>Security Headers</strong> — Are important protective headers present?</li>
+      <li><strong>Exposed Resources</strong> — Are files like .env or backups publicly reachable?</li>
+      <li><strong>Directory Listing</strong> — Can visitors browse your raw file structure?</li>
+      <li><strong>Cookie Security</strong> — Are your cookies protected with Secure/HttpOnly/SameSite?</li>
+      <li><strong>Error Leakage</strong> — Do your error pages reveal stack traces or database details?</li>
+    </ol>
+
+    <h2>How it avoids false alarms</h2>
+    <p>Before flagging an "exposed" file, BlindSpot compares the response against your real homepage.
+      Some sites return the same page for every URL — that's not a real exposure, so BlindSpot skips it.</p>
+
+    <h2>What it's not</h2>
+    <p>BlindSpot is not a hacking tool, exploit generator, or penetration-testing replacement. It performs
+      safe, read-only checks and reports what it finds in plain language — what it means, how serious it
+      is, and what to do about it.</p>
+  </section>
+
+{% endblock %}

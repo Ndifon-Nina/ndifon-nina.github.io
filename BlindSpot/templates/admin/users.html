@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Admin — Users — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Users</h1>
+    <table class="scans-table">
+      <tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th></tr>
+      {% for u in users %}
+        <tr>
+          <td>{{ u['name'] }}</td>
+          <td>{{ u['email'] }}</td>
+          <td>{{ u['role'] }}</td>
+          <td>{{ u['created_at'][:10] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <p><a href="/admin">← Back to admin dashboard</a></p>
+  </div>
+
+{% endblock %}

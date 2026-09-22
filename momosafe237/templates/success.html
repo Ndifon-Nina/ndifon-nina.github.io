@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Report Submitted — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="result-page">
+    <div class="result-box result-green">
+        <h2>✅ Report Submitted</h2>
+        <p>Thank you — your report has been received and will be reviewed by an administrator before it is marked as confirmed.</p>
+    </div>
+    <div class="result-actions">
+        <a href="{{ url_for('home') }}" class="button-link">Back to Home</a>
+        <a href="{{ url_for('check_number') }}" class="button-link secondary">Check another number</a>
+        <a href="{{ url_for('reported_numbers') }}" class="button-link secondary">View reported numbers</a>
+    </div>
+</section>
+
+{% endblock %}

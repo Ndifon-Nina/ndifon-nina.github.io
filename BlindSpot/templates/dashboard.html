@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="dashboard container">
+    <div class="dashboard-header">
+      <h1>Hello, {{ user['name'] }} 👋</h1>
+      <p class="lead">Welcome to BlindSpot.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>New Scan</h2>
+      <form class="scan-form" action="/scan" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="text" name="website_url" placeholder="https://example.com" required>
+        <button type="submit" class="btn btn-primary">Scan</button>
+        <label class="checkbox-label">
+          <input type="checkbox" name="permission_confirmed" required>
+          I own this website or have permission to test it.
+        </label>
+      </form>
+    </div>
+
+    <div class="section-block">
+      <h2>Recent Scans</h2>
+      {% if recent_scans %}
+        <table class="scans-table">
+          <tr><th>Website</th><th>Score</th><th>Date</th></tr>
+          {% for s in recent_scans %}
+            <tr>
+              <td><a href="/results/{{ s['id'] }}">{{ s['website_url'] }}</a></td>
+              <td>{{ s['score'] }}/100</td>
+              <td>{{ s['created_at'][:10] }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+        <p><a href="/history">View full scan history →</a></p>
+      {% else %}
+        <p>No scans yet. Run your first one above.</p>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

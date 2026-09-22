@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dispute a Report — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>🎯 Were you wrongly reported?</h1>
+    <p>If your number was reported but you are not a scammer, explain your side here. An administrator will review it — this does not automatically change anything by itself.</p>
+
+    <form method="POST" enctype="multipart/form-data" class="simple-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label for="phone">Your phone number</label>
+        <input type="text" id="phone" name="phone" placeholder="e.g. 677123456" value="{{ prefill_number }}" required>
+
+        <label for="reason">Why is the report wrong?</label>
+        <textarea id="reason" name="reason" rows="5" placeholder="Explain, for example: I never asked for anyone's PIN, I sell goods and share this number publicly, etc." required></textarea>
+
+        <label for="evidence">Evidence (optional)</label>
+        <input type="file" id="evidence" name="evidence" accept=".png,.jpg,.jpeg">
+
+        <button type="submit">Submit Dispute</button>
+    </form>
+
+    <p class="disclaimer">⚠️ Submitting a dispute does not automatically remove the report. An administrator must review it first.</p>
+</section>
+
+{% endblock %}

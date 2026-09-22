@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}BlindSpot — Find the security problems you didn't know you had{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-inner container">
+      <h1>BLINDSPOT</h1>
+      <p class="lead">Find the security problems you didn't know you had.</p>
+
+      <form class="scan-form" action="/scan" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="text" name="website_url" placeholder="https://example.com" required>
+        <button type="submit" class="btn btn-primary">Start a Security Check</button>
+        <label class="checkbox-label">
+          <input type="checkbox" name="permission_confirmed" required>
+          I own this website or have permission to test it.
+        </label>
+      </form>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>What can BlindSpot find?</h2>
+    <div class="feature-grid">
+      <div class="feature"><h3>HTTPS</h3><p>Is the connection to the site encrypted?</p></div>
+      <div class="feature"><h3>Security Headers</h3><p>Are important protective headers present?</p></div>
+      <div class="feature"><h3>Exposed Resources</h3><p>Are files like .env or backups publicly reachable?</p></div>
+      <div class="feature"><h3>Directory Listing</h3><p>Can visitors browse the raw file structure?</p></div>
+      <div class="feature"><h3>Cookie Security</h3><p>Are cookies protected with Secure/HttpOnly/SameSite?</p></div>
+      <div class="feature"><h3>Error Leakage</h3><p>Do error pages reveal stack traces or database details?</p></div>
+    </div>
+  </section>
+
+  <div class="notice">
+    <p><strong>Important:</strong> Only scan websites you own or have permission to test.</p>
+  </div>
+{% endblock %}

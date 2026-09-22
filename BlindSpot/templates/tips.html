@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Security Tips — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="page-hero">
+    <div class="container narrow">
+      <h1>Security Tips</h1>
+      <p class="lead">Plain-language explanations of what BlindSpot checks and why it matters.</p>
+    </div>
+  </div>
+
+  <section class="section container narrow">
+    <div class="tip">
+      <h3>What is HTTPS?</h3>
+      <p>HTTPS encrypts the connection between a visitor's browser and your website, so passwords, forms,
+        and cookies can't be easily intercepted on the way.</p>
+    </div>
+    <div class="tip">
+      <h3>What is a .env file, and why does it matter?</h3>
+      <p>A .env file usually stores secret values like API keys, database passwords, and app secrets.
+        If it's publicly accessible, anyone can read those secrets.</p>
+    </div>
+    <div class="tip">
+      <h3>What are security headers?</h3>
+      <p>Security headers are instructions your server sends to the browser, telling it how to behave
+        safely — for example, blocking certain scripts or preventing your site from being embedded in a
+        hidden frame on another site.</p>
+    </div>
+    <div class="tip">
+      <h3>What is directory listing?</h3>
+      <p>When enabled, it lets visitors see a raw list of every file in a folder on your server, instead of
+        just the page you intended them to see — which can expose files you forgot were there.</p>
+    </div>
+    <div class="tip">
+      <h3>Why do error pages matter?</h3>
+      <p>A friendly error page just says "something went wrong." A leaky one shows a stack trace,
+        database engine name, or file paths — clues an attacker can use to plan an attack.</p>
+    </div>
+    <div class="tip">
+      <h3>Why protect API keys?</h3>
+      <p>An exposed API key can let someone impersonate your app, rack up usage charges on your account, or
+        access data they shouldn't be able to reach.</p>
+    </div>
+  </section>
+
+{% endblock %}

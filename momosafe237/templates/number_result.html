@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Result for {{ number }} — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="result-page">
+    <h1>Result for {{ number }}</h1>
+
+    {% if not record %}
+        <div class="result-box result-green">
+            <h2>🟢 NO REPORTS FOUND</h2>
+            <p>We couldn't find any reports associated with this number.</p>
+            <p class="disclaimer">⚠️ No reports does not mean the number is completely safe. Always verify before sending money.</p>
+        </div>
+
+    {% elif record.status == 'confirmed' %}
+        <div class="result-box result-red">
+            <h2>🔴 CONFIRMED SCAM</h2>
+            <p>This number has been reviewed and confirmed as suspicious.</p>
+            <ul class="detail-list">
+                <li><strong>Scam type:</strong> {{ record.scam_type }}</li>
+                <li><strong>Reports:</strong> {{ record.report_count }}</li>
+                <li><strong>Verified:</strong> {{ record.verified_at }}</li>
+            </ul>
+            <p class="warning">❌ Do not send money to this number.<br>
+               ❌ Do not share your PIN.<br>
+               ❌ Do not follow instructions from the caller/message.</p>
+        </div>
+        <div class="dispute-box">
+            <p><strong>Is this your number, and you believe this is a mistake?</strong></p>
+            <p>Contact the admin at <strong>{{ admin_email }}</strong>, or use the button below to submit your explanation directly — a human will review it.</p>
+            <a href="{{ url_for('dispute', number=number) }}" class="button-link">Dispute this report</a>
+        </div>
+
+    {% else %}
+        <div class="result-box result-orange">
+            <h2>🟠 REPORTED — UNDER REVIEW</h2>
+            <p>This number has been reported by users, but the reports have not yet been verified by an administrator.</p>
+            <ul class="detail-list">
+                <li><strong>Reports:</strong> {{ record.report_count }}</li>
+                <li><strong>Reported scam category:</strong> {{ record.scam_type }}</li>
+            </ul>
+            <p class="disclaimer">⚠️ Be cautious. This has not been confirmed yet.</p>
+        </div>
+        <div class="dispute-box">
+            <p><strong>Is this your number, and you believe this is a mistake?</strong></p>
+            <p>A single report never confirms a number as a scam — an administrator always reviews the evidence first.</p>
+            <a href="{{ url_for('dispute', number=number) }}" class="button-link">Dispute this report</a>
+        </div>
+    {% endif %}
+
+    <div class="result-actions">
+        <a href="{{ url_for('check_number') }}" class="button-link">Check another number</a>
+        <a href="{{ url_for('report', number=number) }}" class="button-link secondary">🚨 Report this number</a>
+    </div>
+</section>
+
+{% endblock %}

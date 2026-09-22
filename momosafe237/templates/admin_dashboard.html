@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <div class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <a href="{{ url_for('admin_logout') }}" class="button-link small">Logout</a>
+    </div>
+
+    <section class="stats">
+        <div class="stat-box">
+            <span class="stat-number">{{ pending_count }}</span>
+            <span class="stat-label">Pending Reports</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">{{ confirmed_count }}</span>
+            <span class="stat-label">Confirmed Numbers</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">{{ total_count }}</span>
+            <span class="stat-label">Total Reports</span>
+        </div>
+    </section>
+
+    <h2>Pending Reports</h2>
+
+    {% if reports|length == 0 %}
+        <p>No pending reports right now.</p>
+    {% else %}
+        {% for r in reports %}
+        <div class="report-card">
+            <p><strong>Number:</strong> {{ r.phone_number }}</p>
+            <p><strong>Scam Type:</strong> {{ r.scam_type }}</p>
+            <p><strong>Description:</strong> {{ r.description or "—" }}</p>
+            {% if r.evidence_filename %}
+                <p><strong>Evidence:</strong> {{ r.evidence_filename }}</p>
+            {% endif %}
+            <p><strong>Submitted:</strong> {{ r.created_at }}</p>
+            <div class="report-actions">
+                <a href="{{ url_for('admin_verify', report_id=r.id) }}" class="button-link">✅ Verify</a>
+                <a href="{{ url_for('admin_reject', report_id=r.id) }}" class="button-link secondary">❌ Reject</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    <h2>Pending Disputes</h2>
+
+    {% if disputes|length == 0 %}
+        <p>No pending disputes right now.</p>
+    {% else %}
+        {% for d in disputes %}
+        <div class="report-card">
+            <p><strong>Number:</strong> {{ d.phone_number }}</p>
+            <p><strong>Reason:</strong> {{ d.reason }}</p>
+            {% if d.evidence_filename %}
+                <p><strong>Evidence:</strong> {{ d.evidence_filename }}</p>
+            {% endif %}
+            <p><strong>Submitted:</strong> {{ d.created_at }}</p>
+            <div class="report-actions">
+                <a href="{{ url_for('admin_dispute_approve', dispute_id=d.id) }}" class="button-link">✅ Approve (un-confirm number)</a>
+                <a href="{{ url_for('admin_dispute_reject', dispute_id=d.id) }}" class="button-link secondary">❌ Reject</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+{% endblock %}

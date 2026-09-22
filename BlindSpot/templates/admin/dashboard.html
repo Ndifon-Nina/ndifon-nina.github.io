@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    <div class="admin-stats">
+      <div class="stat-card"><span class="stat-number">{{ stats.users }}</span><span>Users</span></div>
+      <div class="stat-card"><span class="stat-number">{{ stats.scans }}</span><span>Scans</span></div>
+      <div class="stat-card"><span class="stat-number">{{ stats.findings }}</span><span>Findings</span></div>
+    </div>
+    <div class="section-block">
+      <h2>Manage</h2>
+      <ul>
+        <li><a href="/admin/users">View Users</a></li>
+        <li><a href="/admin/scans">View Scans</a></li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}

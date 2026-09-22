@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Check a Message — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>💬 Check a Message</h1>
+    <p>Paste a suspicious SMS or WhatsApp message below and we'll look for common warning signs.</p>
+
+    <form method="POST" class="simple-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label for="message">Message text</label>
+        <textarea id="message" name="message" rows="6" placeholder="Paste the message here..." required></textarea>
+        <button type="submit">Check Message</button>
+    </form>
+
+    <div class="hero-links page-links">
+        <a href="{{ url_for('check_number') }}">Check a phone number instead</a>
+        <a href="{{ url_for('report') }}">Report a number directly</a>
+    </div>
+</section>
+
+{% endblock %}

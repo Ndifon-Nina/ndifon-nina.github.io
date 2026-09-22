@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Message Check Result — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="result-page">
+    <h1>Message Check Result</h1>
+
+    <div class="original-message">
+        <strong>Message checked:</strong>
+        <p>{{ message }}</p>
+    </div>
+
+    <div class="score-box">
+        <p>Risk score: <strong>{{ result.score }}%</strong></p>
+        <div class="progress-bar">
+            <div class="progress-fill progress-{{ result.verdict }}" style="width: {{ result.score }}%"></div>
+        </div>
+    </div>
+
+    {% if result.verdict == 'high' %}
+        <div class="result-box result-red">
+            <h2>🔴 HIGH RISK</h2>
+            <p>This message contains several common scam warning signs (English and French keywords are both checked).</p>
+            <p><strong>Warning signs detected:</strong></p>
+            <ul class="detail-list">
+                {% for w in result.warnings %}
+                    <li>✓ {{ w }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>What should you do?</strong></p>
+            <ul class="detail-list">
+                <li>Don't send money.</li>
+                <li>Don't share your PIN or OTP.</li>
+                <li>Don't dial the requested USSD code.</li>
+                <li>Don't click suspicious links.</li>
+                <li>Verify through an official channel.</li>
+            </ul>
+        </div>
+
+    {% elif result.verdict == 'medium' %}
+        <div class="result-box result-orange">
+            <h2>🟠 SOME WARNING SIGNS FOUND</h2>
+            <p><strong>Warning signs detected:</strong></p>
+            <ul class="detail-list">
+                {% for w in result.warnings %}
+                    <li>✓ {{ w }}</li>
+                {% endfor %}
+            </ul>
+            <p class="disclaimer">Be cautious and verify before acting on this message.</p>
+        </div>
+
+    {% else %}
+        <div class="result-box result-green">
+            <h2>🟢 NO OBVIOUS WARNING SIGNS FOUND</h2>
+            <p class="disclaimer">This tool cannot guarantee that a message is safe. Always verify suspicious requests through an official channel.</p>
+        </div>
+    {% endif %}
+
+    <div class="result-actions">
+        <a href="{{ url_for('check_message') }}" class="button-link">Check another message</a>
+        <a href="{{ url_for('report') }}" class="button-link secondary">🚨 Report this number</a>
+    </div>
+</section>
+
+{% endblock %}

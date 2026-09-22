@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Report a Number — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>🚨 Report a Number</h1>
+    <p>No account needed. Fill in what you can — every field except phone number and scam type is optional.</p>
+
+    <form method="POST" enctype="multipart/form-data" class="simple-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label for="phone_number">Phone number</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="e.g. 677123456" value="{{ prefill_number }}" required>
+
+        <label for="scam_type">What happened?</label>
+        <select id="scam_type" name="scam_type" required>
+            <option value="">-- Select scam type --</option>
+            <option value="Fake Mobile Money agent">Fake Mobile Money agent</option>
+            <option value="Fake transaction/refund">Fake transaction/refund</option>
+            <option value="Asked for PIN">Asked for PIN</option>
+            <option value="Asked for OTP/verification code">Asked for OTP/verification code</option>
+            <option value="Suspicious USSD instruction">Suspicious USSD instruction</option>
+            <option value="Fake prize/reward">Fake prize/reward</option>
+            <option value="Wrong transfer / money mule">Wrong transfer / money mule</option>
+            <option value="Phone call impersonation (vishing)">Phone call impersonation (vishing)</option>
+            <option value="Remote access / screen-sharing scam">Remote access / screen-sharing scam</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="description">Paste the message here, or describe what happened (optional)</label>
+        <textarea id="description" name="description" rows="4" placeholder="Paste the suspicious SMS/WhatsApp message here, or describe what happened...">{{ prefill_description }}</textarea>
+
+        <label for="evidence">Optional screenshot (.png, .jpg, .jpeg — max 3MB)</label>
+        <input type="file" id="evidence" name="evidence" accept=".png,.jpg,.jpeg">
+
+        <button type="submit">Submit Report</button>
+    </form>
+</section>
+
+{% endblock %}

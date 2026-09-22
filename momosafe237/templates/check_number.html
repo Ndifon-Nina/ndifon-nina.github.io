@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Check a Number — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>🔍 Check a Number</h1>
+    <p>Enter a Mobile Money phone number to see if it has been reported.</p>
+
+    <form method="POST" class="simple-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label for="phone_number">Phone number</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="e.g. 677123456" required>
+        <button type="submit">Check Number</button>
+    </form>
+
+    <div class="hero-links page-links">
+        <a href="{{ url_for('report') }}">Know a scam number already? Report it directly</a>
+        <a href="{{ url_for('check_message') }}">Check a message instead</a>
+    </div>
+</section>
+
+{% endblock %}

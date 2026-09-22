@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Safety Tips — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>🛡️ Safety Tips</h1>
+
+    <div class="tips-list">
+        {% for tip in tips %}
+        <div class="tip">
+            <h3>{{ tip.title }}</h3>
+            <p>{{ tip.body }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="hero-links page-links">
+        <a href="{{ url_for('check_number') }}">Check a number now</a>
+        <a href="{{ url_for('report') }}">Report a suspicious number</a>
+    </div>
+</section>
+
+{% endblock %}

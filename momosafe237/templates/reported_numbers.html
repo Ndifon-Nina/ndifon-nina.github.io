@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Reported Numbers — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>Reported Numbers</h1>
+
+    <form method="GET" class="simple-form inline-form">
+        <input type="text" name="search" placeholder="Search phone number" value="{{ search }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if numbers|length == 0 %}
+        <p>No reported numbers found.</p>
+        {% if search %}
+            <p><a href="{{ url_for('report', number=search) }}" class="button-link">Report {{ search }} as suspicious</a></p>
+        {% endif %}
+    {% else %}
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Status</th>
+                    <th>Reports</th>
+                    <th>Scam Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for n in numbers %}
+                <tr>
+                    <td>{{ mask_number(n.phone_number) }}</td>
+                    <td>
+                        {% if n.status == 'confirmed' %}
+                            🔴 Confirmed
+                        {% else %}
+                            🟠 Under review
+                        {% endif %}
+                    </td>
+                    <td>{{ n.report_count }}</td>
+                    <td>{{ n.scam_type }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <div class="hero-links page-links">
+        <a href="{{ url_for('report') }}">Report a number not listed here</a>
+        <a href="{{ url_for('check_number') }}">Check one number in detail</a>
+    </div>
+</section>
+
+{% endblock %}

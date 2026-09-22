@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Already Scammed? — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="form-page">
+    <h1>🚨 Already Scammed?</h1>
+    <p>If you think you've been scammed, act fast — act now, in this order:</p>
+
+    <div class="tips-list">
+        {% for step in steps %}
+        <div class="tip">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>💰 Try to get your money back</h2>
+    <div class="contact-list">
+        <div class="contact-card">
+            <h3>MTN Mobile Money self-reversal</h3>
+            <ul class="detail-list">
+                <li>Dial <strong>*126#</strong></li>
+                <li>Choose option <strong>7</strong> "My account"</li>
+                <li>Choose option <strong>5</strong> "Reverse Transaction"</li>
+                <li>Select the transaction and follow the prompts</li>
+                <li>No confirmation? Call <strong>8787</strong> or WhatsApp <strong>683 00 8787</strong></li>
+            </ul>
+        </div>
+        <div class="contact-card">
+            <h3>Orange Money reversal</h3>
+            <ul class="detail-list">
+                <li>Dial <strong>950</strong> within 48 hours of the transaction</li>
+                <li>Choose your language</li>
+                <li>Select the wrongful Mobile Money transaction option</li>
+                <li>Choose "Speak to an agent" and explain what happened</li>
+            </ul>
+        </div>
+    </div>
+    <p class="disclaimer">⚠️ If the receiving account is frozen, you may need a police report to authorise release of the funds; for amounts above 50,000 FCFA, a court order may be required. Your provider's agent will guide you through this if it applies.</p>
+
+    <h2>📞 Real contact channels</h2>
+    <div class="contact-list">
+        <div class="contact-card">
+            <h3>MTN Mobile Money</h3>
+            <ul class="detail-list">
+                <li>Toll-free: <strong>8787</strong> <button class="copy-btn" onclick="copyText('8787', this)" type="button">Copy</button></li>
+                <li>WhatsApp: <strong>+237 683 00 8787</strong> <button class="copy-btn" onclick="copyText('+237683008787', this)" type="button">Copy</button></li>
+                <li>USSD self-service: dial <strong>*126#</strong> → "My account" → "Reverse Transaction"</li>
+                <li>Email: <strong>careline.cm@mtn.com</strong> <button class="copy-btn" onclick="copyText('careline.cm@mtn.com', this)" type="button">Copy</button></li>
+            </ul>
+        </div>
+        <div class="contact-card">
+            <h3>Orange Money</h3>
+            <ul class="detail-list">
+                <li>From an Orange line: dial <strong>8900</strong> <button class="copy-btn" onclick="copyText('8900', this)" type="button">Copy</button></li>
+                <li>From another network: <strong>699 900 555</strong> <button class="copy-btn" onclick="copyText('699900555', this)" type="button">Copy</button></li>
+                <li>Report a scam directly: dial <strong>#150*60#</strong>, or use "OM Anti-Scam" in the Orange Money Africa app</li>
+            </ul>
+        </div>
+        <div class="contact-card">
+            <h3>ANTIC / CIRT Cameroon (national cybersecurity authority)</h3>
+            <ul class="detail-list">
+                <li>Toll-free: <strong>8202</strong> (24/24) <button class="copy-btn" onclick="copyText('8202', this)" type="button">Copy</button></li>
+                <li>Email: <strong>alert@cirt.antic.cm</strong> <button class="copy-btn" onclick="copyText('alert@cirt.antic.cm', this)" type="button">Copy</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="disclaimer">⚠️ Contact numbers can change over time. If in doubt, verify them on the provider's own official website before calling.</p>
+
+    <div class="result-actions">
+        <a href="{{ url_for('report') }}" class="button-link">Report this number on MoMoSafe237</a>
+        <a href="{{ url_for('check_number') }}" class="button-link secondary">Check a different number</a>
+    </div>
+</section>
+
+{% endblock %}

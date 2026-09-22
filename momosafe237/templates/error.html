@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ code }} Error — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="result-page">
+    <div class="result-box result-orange">
+        <h2>⚠️ Error {{ code }}</h2>
+        <p>{{ message }}</p>
+    </div>
+    <a href="{{ url_for('home') }}" class="button-link">Back to Home</a>
+</section>
+
+{% endblock %}

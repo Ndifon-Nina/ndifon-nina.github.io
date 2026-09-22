@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MoMoSafe237{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="{{ url_for('home') }}" class="logo">MoMoSafe237</a>
+            <nav class="nav-links">
+                <a href="{{ url_for('check_number') }}">Check Number</a>
+                <a href="{{ url_for('check_message') }}">Check Message</a>
+                <a href="{{ url_for('report') }}">Report</a>
+                <a href="{{ url_for('reported_numbers') }}">Reported Numbers</a>
+                <a href="{{ url_for('safety_tips') }}">Safety Tips</a>
+                <a href="{{ url_for('already_scammed') }}">Already Scammed?</a>
+                <button id="theme-toggle-btn" class="theme-toggle" onclick="toggleTheme()" type="button">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-box">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>MoMoSafe237 &mdash; Check before you send. This tool does not guarantee safety; always verify through official channels.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='theme.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Dispute Submitted — MoMoSafe237{% endblock %}
+{% block content %}
+
+<section class="result-page">
+    <div class="result-box result-green">
+        <h2>✅ Dispute Submitted</h2>
+        <p>Thank you — an administrator will review your explanation. This does not remove the report by itself.</p>
+    </div>
+    <div class="result-actions">
+        <a href="{{ url_for('home') }}" class="button-link">Back to Home</a>
+        <a href="{{ url_for('check_number') }}" class="button-link secondary">Check another number</a>
+    </div>
+</section>
+
+{% endblock %}

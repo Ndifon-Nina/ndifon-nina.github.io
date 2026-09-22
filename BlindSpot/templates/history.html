@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Scan History — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Previous Scans</h1>
+    {% if scans %}
+      <table class="scans-table">
+        <tr><th>Date</th><th>Website</th><th>Score</th></tr>
+        {% for s in scans %}
+          <tr>
+            <td>{{ s['created_at'][:10] }}</td>
+            <td><a href="/results/{{ s['id'] }}">{{ s['website_url'] }}</a></td>
+            <td>{{ s['score'] }}/100</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No scans yet.</p>
+    {% endif %}
+  </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Register — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="auth">
+    <div class="auth-card">
+      <h1>Create Account</h1>
+      <p class="auth-sub">Start scanning websites you own or manage.</p>
+      <form class="form" action="/register" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="field">
+          <label>Full name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" required minlength="8">
+        </div>
+        <div class="field">
+          <label>Confirm password</label>
+          <input type="password" name="confirm_password" required minlength="8">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="/login">Log in</a></p>
+    </div>
+  </div>
+
+{% endblock %}

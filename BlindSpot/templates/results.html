@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Scan Results — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="container narrow">
+    <h1>BlindSpot Scan</h1>
+    <h2>{{ scan['website_url'] }}</h2>
+
+    <div class="score-card">
+      <h2>BlindSpot Security Score</h2>
+      <div class="score-number">{{ scan['score'] }}<span style="font-size:1.5rem;color:var(--text-muted);">/100</span></div>
+      <div class="summary-grid">
+        <div class="summary-item"><span class="summary-count" style="color:var(--danger);">{{ high }}</span><span class="summary-label">High</span></div>
+        <div class="summary-item"><span class="summary-count" style="color:var(--warning);">{{ medium }}</span><span class="summary-label">Medium</span></div>
+        <div class="summary-item"><span class="summary-count" style="color:var(--success);">{{ low }}</span><span class="summary-label">Low</span></div>
+      </div>
+      <p class="scan-note" style="color:var(--text-muted); font-size:0.85rem; margin-top:1rem;">
+        This score is based only on the checks performed by BlindSpot.</p>
+    </div>
+
+    <h2>Findings</h2>
+    {% if findings %}
+      {% for f in findings %}
+        <div class="finding finding-{{ f['severity']|lower }}">
+          <div class="finding-top">
+            <span class="badge badge-{{ f['severity']|lower }}">{{ f['severity'] }}</span>
+            <h3>{{ f['title'] }}</h3>
+          </div>
+          <p><strong>Why it matters:</strong> {{ f['description'] }}</p>
+          <p><strong>What to do:</strong> {{ f['recommendation'] }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>✓ No issues found by BlindSpot's checks. Nice work!</p>
+    {% endif %}
+
+    <p><a href="/">← Run another scan</a></p>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Profile — BlindSpot{% endblock %}
+
+{% block content %}
+  <div class="auth">
+    <div class="auth-card">
+      <h1>Profile</h1>
+      <p><strong>Name:</strong> {{ user['name'] }}</p>
+      <p><strong>Email:</strong> {{ user['email'] }}</p>
+      <p><strong>Account created:</strong> {{ user['created_at'][:10] }}</p>
+    </div>
+  </div>
+
+{% endblock %}

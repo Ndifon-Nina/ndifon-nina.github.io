@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}MoMoSafe237 — Check before you send{% endblock %}
+{% block content %}
+
+<section class="hero">
+    <h1>Check before you send.</h1>
+    <p class="tagline">MoMoSafe237 tells you whether a Mobile Money number has been reported by other people in Cameroon, before you send anything.</p>
+
+    <div class="quick-check">
+        <p>Quick check — enter a phone number</p>
+        <form method="POST" action="{{ url_for('check_number') }}" class="quick-check-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="text" name="phone_number" placeholder="e.g. 677123456" required>
+            <button type="submit">Check</button>
+        </form>
+    </div>
+
+    <div class="hero-links">
+        <a href="{{ url_for('check_message') }}">Check a suspicious message instead</a>
+        <a href="{{ url_for('report') }}">Report a number</a>
+        <a href="{{ url_for('safety_tips') }}">Safety tips</a>
+    </div>
+</section>
+
+<div class="stats-bar">
+    <div class="stat-item">
+        <span class="stat-number">{{ reported_numbers }}</span>
+        <span class="stat-label">Reported numbers</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">{{ confirmed_scams }}</span>
+        <span class="stat-label">Confirmed scams</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">{{ total_reports }}</span>
+        <span class="stat-label">Total reports</span>
+    </div>
+</div>
+
+<section class="how-it-works">
+    <h2>How it works</h2>
+    <div class="steps-grid">
+        <div class="step-box">
+            <span class="step-number">1</span>
+            <h3>Check</h3>
+            <p>Enter a number or paste a message before you send any money.</p>
+        </div>
+        <div class="step-box">
+            <span class="step-number">2</span>
+            <h3>Understand</h3>
+            <p>See a clear result — no reports, under review, or confirmed scam.</p>
+        </div>
+        <div class="step-box">
+            <span class="step-number">3</span>
+            <h3>Protect</h3>
+            <p>Report suspicious numbers so other people are warned too.</p>
+        </div>
+    </div>
+</section>
+
+{% if recent_reports and recent_reports|length > 0 %}
+<section class="form-page">
+    <h2>Recently reported</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Status</th>
+                <th>Scam Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for n in recent_reports %}
+            <tr>
+                <td>{{ mask_number(n.phone_number) }}</td>
+                <td>
+                    {% if n.status == 'confirmed' %}
+                        🔴 Confirmed
+                    {% else %}
+                        🟠 Under review
+                    {% endif %}
+                </td>
+                <td>{{ n.scam_type }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('reported_numbers') }}" class="button-link">See all reported numbers</a>
+</section>
+{% endif %}
+
+{% endblock %}
