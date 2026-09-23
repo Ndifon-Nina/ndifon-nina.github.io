@@ -8,7 +8,6 @@
         :root {
             --navy: #123a5a;
             --blue: #2563eb;
-            --cyan: #0ea5e9;
             --border: #d7e0ea;
             --ink: #1f2933;
             --muted: #5b6b7b;
@@ -19,45 +18,45 @@
         body {
             font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.32;
             background: #eef3fa;
             color: var(--ink);
-            font-size: 0.93rem;
+            font-size: 0.82rem;
         }
 
         .resume {
             max-width: 50rem;
-            margin: 2rem auto;
+            margin: 1.1rem auto;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 6px 20px rgba(15, 40, 70, 0.12);
-            padding: 2.5rem;
+            padding: 1.3rem 1.8rem 1.1rem;
         }
 
         header {
-            border-bottom: 3px solid var(--blue);
-            padding-bottom: 0.9rem;
-            margin-bottom: 1.1rem;
+            border-bottom: 2px solid var(--blue);
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         h1 {
-            margin: 0;
-            font-size: 1.85rem;
+            margin: 0 0 0.15rem;
+            font-size: 1.55rem;
             color: var(--navy);
             letter-spacing: 0.02em;
         }
 
         .title-line {
-            margin: 0.2rem 0 0.45rem;
+            margin: 0 0 0.3rem;
             color: var(--blue);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            font-size: 0.85rem;
+            font-size: 0.72rem;
         }
 
         .contact-line {
-            font-size: 0.86rem;
+            font-size: 0.76rem;
             color: var(--muted);
         }
 
@@ -71,17 +70,17 @@
         }
 
         h2 {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--navy);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 0.25rem;
-            margin: 1.4rem 0 0.7rem;
+            padding-bottom: 0.2rem;
+            margin: 0.95rem 0 0.45rem;
         }
 
         p {
-            margin: 0.25rem 0;
+            margin: 0.2rem 0;
         }
 
         .item-head {
@@ -90,132 +89,95 @@
             align-items: baseline;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 0.7rem;
+            margin-top: 0.45rem;
         }
 
         .item-head .role { font-weight: 700; }
         .item-head .org { color: var(--blue); font-weight: 600; }
-        .item-head .date { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
-        .subline { color: var(--muted); font-size: 0.87rem; }
+        .item-head .date { color: var(--muted); font-size: 0.76rem; white-space: nowrap; }
+        .subline { color: var(--muted); font-size: 0.82rem; }
 
         ul {
-            margin: 0.25rem 0;
-            padding-left: 1.25rem;
+            margin: 0.2rem 0;
+            padding-left: 1.2rem;
         }
 
-        li { margin-bottom: 0.18rem; }
+        li { margin-bottom: 0.14rem; }
 
         .skills-list {
             list-style: none;
             padding: 0;
-            margin: 0.35rem 0 0;
+            margin: 0.3rem 0 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            gap: 0.35rem;
         }
 
         .skills-list li {
             background: #eef3fa;
             border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 0.12rem 0.7rem;
-            font-size: 0.83rem;
-        }
-
-        .job-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 0.7rem;
-        }
-
-        .print-bar {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .print-bar button {
-            background: var(--blue);
-            border: none;
-            color: #fff;
-            font: inherit;
-            font-weight: 600;
-            padding: 0.6rem 1.4rem;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .print-bar button:hover {
-            background: #1d4ed8;
+            border-radius: 14px;
+            padding: 0.1rem 0.65rem;
+            font-size: 0.78rem;
         }
 
         @media print {
-            .print-bar { display: none; }
-            body { background: #fff; font-size: 11.5px; }
-            .resume { margin: 0; box-shadow: none; padding: 0; max-width: none; }
+            body { background: #fff; }
+            .resume { margin: 0; box-shadow: none; max-width: none; padding: 0.8rem 1rem; }
         }
 
         @media (max-width: 600px) {
-            .resume { padding: 1.5rem; margin: 1rem; }
+            .resume { padding: 1.2rem; margin: 0.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="print-bar">
-        <button onclick="window.print()">Save as PDF / Print</button>
-    </div>
-
     <div class="resume">
 
         <header>
             <h1>Ndifon Nina</h1>
-            <p class="title-line">Computer Engineering Student</p>
+            <p class="title-line">Computer Engineering &amp; Cybersecurity Student</p>
             <p class="contact-line">
                 <a href="mailto:ndifon.nina@gmail.com">ndifon.nina@gmail.com</a> &middot;
                 653761228 &middot;
                 <a href="https://github.com/Ndifon-Nina" target="_blank" rel="noopener noreferrer">github.com/Ndifon-Nina</a> &middot;
                 <a href="https://www.linkedin.com/in/ndifon-nina" target="_blank" rel="noopener noreferrer">linkedin.com/in/ndifon-nina</a>
             </p>
+            <p class="contact-line">
+                Bamenda, North West Region, Cameroon
+            </p>
         </header>
 
-        <h2>About Me</h2>
+        <h2>Professional Summary</h2>
         <p>
-            I'm a Computer Engineering student at NAHPI and HTTTC ENSET in Bamenda, focused on
-            cybersecurity, software development, and computer systems.
-        </p>
-        <p>
-            I learn by building: I don't just read, I make tools, break them, find out why they
-            break, and fix them. That's how I ended up building a scam-reporting platform for
-            Cameroon and a website security scanner of my own.
-        </p>
-        <p>
-            Currently seeking opportunities to gain real-world technical experience in
-            cybersecurity and software development.
+            Computer Engineering student (Level 300) at NAHPI and HTTTC ENSET, University of Bamenda,
+            specializing in cybersecurity and software development. I learn by building: I make tools,
+            break them, find out why, and fix them &mdash; that habit produced a scam-reporting platform
+            for Cameroon (MoMoSafe237) and a website security scanner (BlindSpot).
         </p>
 
         <h2>Education</h2>
         <div class="item-head">
             <span class="role">National Higher Polytechnic Institute (NAHPI), University of Bamenda</span>
-            <span class="date">2025 &ndash; Present &middot; Expected graduation 2028</span>
+            <span class="date">2025 &ndash; Present &middot; Expected 2028</span>
         </div>
-        <p class="subline">Bachelor of Engineering (B.Eng.) in Computer Engineering &mdash; Level 300</p>
+        <p class="subline">B.Eng., Computer Engineering &mdash; Level 300</p>
 
         <div class="item-head">
             <span class="role">Higher Technical Teacher Training College (HTTTC-ENSET), University of Bamenda</span>
-            <span class="date">2025 &ndash; Present &middot; Expected graduation 2028</span>
+            <span class="date">2025 &ndash; Present &middot; Expected 2028</span>
         </div>
-        <p class="subline">Bachelor of Science (B.Sc.) in Fundamental Computer Science &mdash; Level 300</p>
+        <p class="subline">B.Sc., Fundamental Computer Science &mdash; Level 300</p>
 
         <h2>Projects</h2>
         <div class="item-head">
-            <span class="role">Personal Portfolio Website</span>
-            <span class="date"><a href="https://ndifon-nina.github.io/" class="org">ndifon-nina.github.io</a></span>
+            <span class="role">MoMoSafe237 &mdash; Scam Reporting Platform</span>
+            <span class="date">Python &middot; Flask &middot; SQLite</span>
         </div>
         <ul>
-            <li>Designed and built a responsive personal portfolio website using HTML and CSS</li>
+            <li>Built a platform that detects scam messages and numbers in easy French and English, catches customs/delivery-fee scams, and lets users dispute false reports</li>
+            <li>Shipped an admin panel with login protection, rate limiting, and scam report verification</li>
         </ul>
 
         <div class="item-head">
@@ -223,25 +185,7 @@
             <span class="date">Python &middot; Flask</span>
         </div>
         <ul>
-            <li>Scans websites for missing security headers, exposed <code>.env</code> / <code>.git/config</code>, directory listing, and error leakage</li>
-            <li>Explains each finding with a practical fix</li>
-        </ul>
-
-        <div class="item-head">
-            <span class="role">MoMoSafe237 &mdash; Scam Reporting Platform</span>
-            <span class="date">Python &middot; Flask &middot; SQLite</span>
-        </div>
-        <ul>
-            <li>Lets users check a mobile money number or message, report a scammer, and dispute wrong reports</li>
-            <li>Includes rate limiting, login protections, and an admin review system</li>
-        </ul>
-
-        <div class="item-head">
-            <span class="role">Blog Post Stats Calculator</span>
-            <span class="date"><a href="https://github.com/Ndifon-Nina/week1-foundations" class="org">CLI &middot; Python</a></span>
-        </div>
-        <ul>
-            <li>CLI tool that analyzes blog posts from a JSON file and outputs total posts, top category, average word count, and oldest post</li>
+            <li>Built a scanner that detects missing security headers, exposed <code>.env</code> / <code>.git</code>, directory listing, and data leaks, then explains each fix</li>
         </ul>
 
         <h2>Experience</h2>
@@ -249,56 +193,36 @@
             <span class="role">Technology Intern</span>
             <span class="date">2026</span>
         </div>
-        <p class="subline">Neltech</p>
+        <p class="subline">Neltech &middot; Team web application project</p>
         <ul>
-            <li>Contributed to a team-based web application project, working on frontend implementation with exposure to backend/database development using PHP</li>
-            <li>Collaborated with teammates to divide responsibilities and coordinate development tasks</li>
+            <li>Shipped frontend components and worked with teammates on backend/database code in PHP</li>
         </ul>
 
-        <div class="job-head">
-            <span class="role">Cyber Job Simulation &mdash; <span class="org">Deloitte (via Forage)</span></span>
+        <div class="item-head">
+            <span class="role">Deloitte Cyber Job Simulation (Forage)</span>
             <span class="date">2026</span>
         </div>
         <ul>
-            <li>Completed practical cybersecurity tasks in a scenario-based simulation</li>
-        </ul>
-
-        <div class="job-head">
-            <span class="role">Cybersecurity Job Simulation &mdash; <span class="org">Forage</span></span>
-            <span class="date">2026</span>
-        </div>
-        <ul>
-            <li>Designed a phishing email simulation and analyzed the results</li>
-        </ul>
-
-        <h2>Certifications</h2>
-        <ul>
-            <li>Foundations of Cybersecurity &mdash; Google (in progress, Course 1 of the Google Cybersecurity Professional Certificate)</li>
-            <li>Introduction to Cybersecurity &mdash; Cisco Networking Academy (2026)</li>
-        </ul>
-
-        <h2>Currently Learning</h2>
-        <ul>
-            <li>Google Cybersecurity Professional Certificate (includes Foundations of Cybersecurity) &mdash; in progress</li>
-            <li>TryHackMe &mdash; hands-on cybersecurity practice</li>
+            <li>Completed a scenario-based phishing simulation and delivered a written security analysis</li>
         </ul>
 
         <h2>Skills</h2>
         <ul class="skills-list">
-            <li>Python Programming</li>
-            <li>Web Development (HTML, CSS)</li>
-            <li>Flask</li>
+            <li>Python (Flask, SQLite)</li>
+            <li>Web Security</li>
+            <li>HTML &amp; CSS</li>
             <li>Git / GitHub</li>
-            <li>Database Management</li>
-            <li>SQL Basics</li>
-            <li>Web Security Basics</li>
-            <li>Phishing &amp; Scam Awareness</li>
-            <li>Linux (learning)</li>
-            <li>Network Security (learning)</li>
-            <li>Technical Troubleshooting (in progress)</li>
-            <li>Problem Solving</li>
+            <li>Databases</li>
+            <li>Technical Troubleshooting</li>
+            <li>Scam &amp; Phishing Awareness (EN/FR)</li>
             <li>Teamwork</li>
             <li>Communication</li>
+        </ul>
+
+        <h2>Certifications</h2>
+        <ul>
+            <li>Google Cybersecurity &mdash; Foundations (in progress &middot; Google Cybersecurity Certificate)</li>
+            <li>Introduction to Cybersecurity &mdash; Cisco Networking Academy (2026)</li>
         </ul>
 
     </div>
