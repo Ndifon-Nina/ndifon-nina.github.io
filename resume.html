@@ -121,9 +121,41 @@
             font-size: 0.78rem;
         }
 
+        .action-bar {
+            max-width: 50rem;
+            margin: 0 auto 0.6rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+        }
+
+        .action-btn {
+            display: inline-block;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #fff;
+            background: var(--blue);
+            border: 1px solid var(--blue);
+        }
+
+        .action-btn-light {
+            color: var(--blue);
+            background: #fff;
+            border-color: var(--border);
+        }
+
         @media print {
+            .action-bar { display: none; }
             body { background: #fff; }
             .resume { margin: 0; box-shadow: none; max-width: none; padding: 0.8rem 1rem; }
+        }
+
+        @media (max-width: 600px) {
+            .resume { padding: 1.2rem; margin: 0.5rem; }
         }
 
         @media (max-width: 600px) {
@@ -132,6 +164,12 @@
     </style>
 </head>
 <body>
+
+    <div class="action-bar">
+        <a class="action-btn action-btn-light" href="index.html">Back to Portfolio</a>
+        <a class="action-btn" href="javascript:window.print()">Print / Save as PDF</a>
+        <a class="action-btn" href="resume.html" download>Download Resume</a>
+    </div>
 
     <div class="resume">
 
