@@ -477,6 +477,18 @@ code {
     color: #78350f;
 }
 
+.skill-pill.basic {
+    border-color: #c7d2fe;
+    background: #eef2ff;
+    color: #3730a3;
+}
+
+.skill-pill.soft {
+    border-color: #ddd6fe;
+    background: #f5f3ff;
+    color: #5b21b6;
+}
+
 /* ---------- Projects ---------- */
 
 .project {
