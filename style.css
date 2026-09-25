@@ -518,6 +518,39 @@ code {
     outline: none;
 }
 
+.photo-link {
+    display: block;
+    margin: 0.8rem 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+}
+
+.photo-link .project-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.photo-caption {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--page-bg);
+    border-top: 1px solid var(--border);
+}
+
+.photo-link:hover,
+.photo-link:focus-visible {
+    border-color: var(--blue);
+    outline: none;
+}
+
 /* ---------- Experience ---------- */
 
 .exp-item {
