@@ -604,6 +604,21 @@ code {
     margin-bottom: 0.35rem;
 }
 
+.exp-item .cert-verify {
+    display: inline-block;
+    margin-top: 0.4rem;
+    color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.exp-item .cert-verify:hover,
+.exp-item .cert-verify:focus-visible {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
 /* ---------- Certifications ---------- */
 
 .cert-list {
